@@ -16,15 +16,6 @@ app.use(express.json());
 app.use(route);
 
 
-//MONGODB CONNECTION
-//Online data Base to be created
-
-// mongoose.connect(" ", { useNewUrlParser: true, useUnifiedTopology: true });
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function () {
-//     console.log("Db connected")
-// });
 
 //Declaring the port for connection
 const port = process.env.PORT || 3000;
