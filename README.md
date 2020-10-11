@@ -3,7 +3,7 @@
 ## Below are some resources for learning Git and Github:
 
 - [Learning Basic Git](https://youtu.be/USjZcfj8yxE)
-- [Pro Git book (Advanced)](https://progit2.s3.amazonaws.com/es/2015-03-10-11982/progit-es.388.pdf)
+- [Pro Git book (Advanced)](https://www.pdfdrive.com/download.pdf?id=33757865&h=4efc2ba84a36e4a3fbef1e962524a10e&u=cache&ext=pdf)
 - [Learning Basic Github](https://youtu.be/nhNq2kIvi9s)
 - [Github Official Resource List](https://try.github.io/)
 - https://www.atlassian.com/git
