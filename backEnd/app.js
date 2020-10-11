@@ -15,7 +15,8 @@ app.use(body_parser.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(route);
 
-
+//Serving static files
+app.use(express.static('frontEnd/public'))
 
 //Declaring the port for connection
 const port = process.env.PORT || 3000;
