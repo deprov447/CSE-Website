@@ -23,4 +23,4 @@
 - Open `localhost:3000` on browser.
 - **Start Contributing**
 
-Follow [Contribution Guidelines](CONTRIBUTION.md)
+Follow [Contribution Guidelines](https://github.com/deprov447/cse-fresher-website/blob/master/CONTRIBUTING.md) 
