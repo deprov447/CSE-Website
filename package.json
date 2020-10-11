@@ -1,14 +1,17 @@
 {
-  "name": "backend",
+  "name": "ancient-coast-19809",
   "version": "1.0.0",
   "description": "Website for freshers",
   "main": "app.js",
   "scripts": {
     "start": "node backEnd/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "engines": {
+    "node": "14.13.0"
+  },
+
+  "author": "deprov447",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
