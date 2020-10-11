@@ -25,7 +25,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 # Instructions
 
-1. Fork the repository.
+1. Follow the instructions in [README.md](README.md) to setup environment.
 2. Any frontend specifics should be done in [here](https://github.com/deprov447/cse-fresher-website/tree/master/frontEnd/public)
 3. Any backtend specifics should be done in [here](https://github.com/deprov447/cse-fresher-website/tree/master/backEnd)
 

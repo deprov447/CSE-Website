@@ -14,3 +14,5 @@ Steps to setup
 - Run `nodemon app.js`
 - Open `localhost:3000` on browser.
 - **Start Contributing**
+
+Follow [Contribution Guidelines](CONTRIBUTION.md)
