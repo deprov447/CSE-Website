@@ -4,6 +4,7 @@
   "description": "Website for freshers",
   "main": "app.js",
   "scripts": {
+    "start": "node backEnd/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
   },
