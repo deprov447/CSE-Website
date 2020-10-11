@@ -4,11 +4,14 @@ let User = require('../models/form')
 
 // Save details
 exports.save = (req, res, next) => {
-  let form = new Detail({
-    name: req.body.name,
-    email: req.body.email,
-    address: req.body.address
-  })
+  //Here we add the Schema for what details we need to store in our database in our form element
+  
+  
+//   let form = new Detail({
+//     name: req.body.name,
+//     email: req.body.email,
+//     address: req.body.address
+//   })
 
   // Save Data
   form.save()
