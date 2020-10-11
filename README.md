@@ -8,7 +8,7 @@
 - [Github Official Resource List](https://try.github.io/)
 - https://www.atlassian.com/git
 
-Steps to setup
+## Steps to setup
 - Fork this and create a PR (or better, dm to extend you the ownership)
 - Setup Environment
   - Use cloud9 (or any other online environment to decrease the hassle)
