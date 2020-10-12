@@ -1,11 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require("path")
+const path = require("path");
 
 const router = express.Router();
 
 //Importing the model for user signUp
 const { userSchema, userModel } = require("../../models/user")
+
+//Importing the auth middleware
+const auth = require("../../Middlewares/auth");
+
 
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
@@ -36,6 +40,7 @@ router.post("/users/signUp", async (req, res) => {
         res.send({ user, token });
     } catch (error) {
         res.sendStatus(500);
+        
     }
 
 })
@@ -50,5 +55,8 @@ router.post("/users/login", async (req, res) => {
         res.sendStatus(500)
     }
 })
+
+
+
 
 module.exports = router;
