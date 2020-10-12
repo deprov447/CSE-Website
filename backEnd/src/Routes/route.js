@@ -4,38 +4,32 @@ const path = require("path")
 
 const router = express.Router();
 
-
 //Importing the model for user signUp
 const { userSchema, userModel } = require("../../models/user")
 
-
-
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/index.html"))
+    res.render("../frontEnd/public/index")
 })
 
-router.get("/seniors", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/knowYourSeniors.html"))
+router.get("/seniors",(req,res)=>{
+    res.render("../frontEnd/public/knowYourSeniors")
 })
 
-router.get("/introduce", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/juniorIntro.html"))
+router.get("/introduce",(req,res)=>{
+    res.render("../frontEnd/public/juniorIntro.ejs")
 })
 
-router.get("/gallery", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/gallery.html"))
+router.get("/gallery",(req,res)=>{
+    res.render("../frontEnd/public/gallery")
 })
 
-
-router.get("/roadmap", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/roadmap.html"))
+router.get("/roadmap",(req,res)=>{
+    res.render("../frontEnd/public/roadmap.ejs")
 })
 
 //Router for creating a new User
 router.post("/users/signUp", async (req, res) => {
     const user = new userModel(req.body);
-
-
     try {
         await user.save();
         const token = await user.authToken(user);
@@ -55,6 +49,7 @@ router.post("/users/login", async (req, res) => {
     } catch (error) {
         res.sendStatus(500)
     }
-
 })
+
+
 module.exports = router;
