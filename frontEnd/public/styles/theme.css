@@ -1,0 +1,19 @@
+body,
+html {
+  font-family: "Raleway", sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  z-index: 2;
+  position: relative;
+  height: 100%;
+  background-color: white;
+  -webkit-transition: transform 0.7s ease-in-out;
+  -moz-transition: transform 0.7s ease-in-out;
+  -ms-transition: transform 0.7s ease-in-out;
+  -o-transition: transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+}
