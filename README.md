@@ -1,6 +1,14 @@
 # CSE FRESHERS WEBSITE
 
-Steps to setup
+## Below are some resources for learning Git and Github:
+
+- [Learning Basic Git](https://youtu.be/USjZcfj8yxE)
+- [Pro Git book (Advanced)](https://www.pdfdrive.com/download.pdf?id=33757865&h=4efc2ba84a36e4a3fbef1e962524a10e&u=cache&ext=pdf)
+- [Learning Basic Github](https://youtu.be/nhNq2kIvi9s)
+- [Github Official Resource List](https://try.github.io/)
+- https://www.atlassian.com/git
+
+## Steps to setup
 - Fork this and create a PR (or better, dm to extend you the ownership)
 - Setup Environment
   - Use cloud9 (or any other online environment to decrease the hassle)
@@ -14,3 +22,9 @@ Steps to setup
 - Run `nodemon app.js`
 - Open `localhost:3000` on browser.
 - **Start Contributing**
+
+Follow [Contribution Guidelines](https://github.com/deprov447/cse-fresher-website/blob/master/CONTRIBUTING.md) 
+
+To see the work done - [Click here](https://ancient-coast-19809.herokuapp.com/)
+
+## Please create a new branch before any major change. Don't push directly to main branch.
