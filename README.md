@@ -17,9 +17,9 @@
 - Clone the repo
   - If owner, run `git clone https://github.com/deprov447/cse-fresher-website`
   - else `git clone https://github.com/<your_handle_name>/cse-fresher-website`
-- Go to `cse-fresher-website/backEnd`
+- Go to `cse-fresher-website` folder
 - Run `npm install`
-- Run `nodemon app.js`
+- Run `node backEnd/app.js`
 - Open `localhost:3000` on browser.
 - **Start Contributing**
 
