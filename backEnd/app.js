@@ -9,6 +9,9 @@ const app = express();
 //Requiring the route
 const route = require("./src/Routes/route")
 
+//Requiring the database
+const dataBase = require("./database/mongo")
+
 //MIDDLEWARES
 app.use(cors())
 app.use(body_parser.urlencoded({ extended: false })) 
