@@ -5,23 +5,23 @@ const path = require("path")
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/index.html"))
+    res.render("../frontEnd/public/index")
 })
 
 router.get("/seniors",(req,res)=>{
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/knowYourSeniors.html"))
+    res.render("../frontEnd/public/knowYourSeniors")
 })
 
 router.get("/introduce",(req,res)=>{
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/juniorIntro.html"))
+    res.render("../frontEnd/public/juniorIntro.ejs")
 })
 
 router.get("/gallery",(req,res)=>{
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/gallery.html"))
+    res.render("../frontEnd/public/gallery")
 })
-
 
 router.get("/roadmap",(req,res)=>{
-    res.sendFile(path.join(__dirname, "../../../frontEnd/public/roadmap.html"))
+    res.render("../frontEnd/public/roadmap.ejs")
 })
+
 module.exports = router;
