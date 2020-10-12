@@ -1,13 +1,16 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require('mongoose')
-const body_parser = require("body-parser")
+const   express     = require("express"), 
+        cors        = require("cors"),
+        mongoose    = require('mongoose'),
+        body_parser = require("body-parser");
 
 const app = express();
 
 
 //Requiring the route
 const route = require("./src/Routes/route")
+
+//set view engine
+app.set('view engine', 'ejs');
 
 //MIDDLEWARES
 app.use(cors())
