@@ -19,7 +19,7 @@
   - else `git clone https://github.com/<your_handle_name>/cse-fresher-website`
 - Go to `cse-fresher-website` folder
 - Run `npm install`
-- Run `node backEnd/app.js`
+- Run `npm start`
 - Open `localhost:3000` on browser.
 - **Start Contributing**
 
