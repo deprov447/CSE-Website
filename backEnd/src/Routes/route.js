@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require("path");
+
 
 const router = express.Router();
 
@@ -10,6 +10,7 @@ const { userSchema, userModel } = require("../../models/user")
 //Importing the auth middleware
 const auth = require("../../Middlewares/auth");
 
+const restriction = require("../../signUprestriction")
 
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
@@ -33,13 +34,17 @@ router.get("/roadmap", (req, res) => {
 
 //Router for creating a new User
 router.post("/users/signUp", async (req, res) => {
-    const user = new userModel(req.body);
     try {
+        const isMatch = await restriction(req.body.email);
+        
+        const user = new userModel(req.body);
+        
         await user.save();
         const token = await user.authToken(user);
+        
         res.send({ user, token });
     } catch (error) {
-        res.sendStatus(500);
+        res.status(500).send(error.message)
 
     }
 
@@ -52,7 +57,7 @@ router.post("/users/login", async (req, res) => {
         const token = await user.authToken(user);
         res.send({ user, token })
     } catch (error) {
-        res.sendStatus(500)
+        res.status(500).send(error.message)
     }
 })
 
@@ -61,6 +66,7 @@ router.get("/test", auth, (req, res) => {
     res.send(req.user)
 })
 
+//Logout from a single device
 router.post("/users/logout", auth, async (req, res) => {
 
     try {
