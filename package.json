@@ -5,12 +5,13 @@
   "main": "app.js",
   "scripts": {
     "start": "node backEnd/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon backEnd/app.js"
   },
   "engines": {
     "node": "14.13.0"
   },
-  "author": "deprov447",
+  "author": "deprov447,Sandeepan-Das",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,5 +21,8 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
