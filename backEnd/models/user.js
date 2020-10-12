@@ -3,7 +3,9 @@ let mongoose = require('mongoose')
 
 //Importing module for hashing
 const bcrypt = require("bcryptjs")
-const { use } = require('../src/Routes/route')
+
+//Importing module for generating token
+const jwt = require("jsonwebtoken")
 
 // import promise
 mongoose.Promise = global.Promise
@@ -16,14 +18,14 @@ let userSchema = new mongoose.Schema({
 
 	email: {
 		type: String,
-		// unique: true,
+		unique: true,
 		required: true,
-		// trim: true
+		trim: true
 	},
 	username: {
 		type: String,
 		required: true,
-		// trim: true
+		trim: true
 	},
 	password: {
 		type: String,
@@ -33,6 +35,11 @@ let userSchema = new mongoose.Schema({
 	//     type: String,
 	//     required: true,
 	//   }
+	tokens: [{
+		token: {
+			type: String
+		}
+	}]
 })
 
 //Hashing the password before saving in dataBase
@@ -45,10 +52,10 @@ userSchema.pre("save", async function (next) {
 	next();
 })
 
-
+// Log in verification
 userSchema.statics.verifyUser = async (email, password) => {
 	const user = await userModel.findOne({ email })
-	
+
 	if (!user) {
 		throw new Error("Wrong email or password")
 	}
@@ -60,11 +67,17 @@ userSchema.statics.verifyUser = async (email, password) => {
 	return user;
 }
 
-
-
+//Generating authentication token
+userSchema.methods.authToken = async function (user) {
+	const token = jwt.sign({ _id: user._id.toString() }, "key")
+	this.tokens.push({ token })
+	await this.save();
+	return token;
+}
 
 
 userModel = mongoose.model('Users', userSchema)
+
 module.exports = {
 	userSchema, userModel
 }

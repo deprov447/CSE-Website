@@ -7,7 +7,7 @@ const router = express.Router();
 
 //Importing the model for user signUp
 const { userSchema, userModel } = require("../../models/user")
-// const {signUp} = require("../../controllers/auth/user-controller")
+
 
 
 router.get("/", (req, res) => {
@@ -35,9 +35,11 @@ router.get("/roadmap", (req, res) => {
 router.post("/users/signUp", async (req, res) => {
     const user = new userModel(req.body);
 
+
     try {
         await user.save();
-        res.send(user);
+        const token = await user.authToken(user);
+        res.send({ user, token });
     } catch (error) {
         res.sendStatus(500);
     }
@@ -48,7 +50,8 @@ router.post("/users/signUp", async (req, res) => {
 router.post("/users/login", async (req, res) => {
     try {
         const user = await userModel.verifyUser(req.body.email, req.body.password);
-        res.send(user)
+        const token = await user.authToken(user);
+        res.send({ user, token })
     } catch (error) {
         res.sendStatus(500)
     }

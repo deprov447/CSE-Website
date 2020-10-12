@@ -8,3 +8,6 @@ mongoose.connect("mongodb://127.0.0.1/freshersWebsite", { useNewUrlParser: true,
 }).catch((e) => {
 	console.error('Failed to connect to MongoDB 😕💥 ')
 })
+
+
+//Created a local Mongodb data base
