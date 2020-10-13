@@ -1,0 +1,46 @@
+.page-content{
+    background-color: white;
+    padding: 25px
+}
+.view-one{
+    /* background-color: orange; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 25vw;
+}
+.view-one div{
+    /* background-color: aqua; */
+    width: 50vw;
+}
+.view-two{
+    min-height: 100vh;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.view-two .img-cont{
+    display: flex;
+    align-items: center;
+}
+.view-two .img-cont img{
+    max-width: 300px;
+    margin: 1.5vw;
+    box-shadow: 0px 0px 8px gray;
+}
+
+.view-two .img-cont img:hover{
+    box-shadow: 0px 0px 12px gray;
+    cursor: pointer;
+}
+.view-three{
+    margin-top: 20vh;
+    padding: 5vh 5vw;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    outline: 4px solid black;
+}
