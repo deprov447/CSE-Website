@@ -1,23 +1,30 @@
 const jwt = require("jsonwebtoken")
-const { userModel } = require("../models/user");
+const { seniorUserModel, fresherUserModel } = require("../models/user");
 
 
 const auth = async (req, res, next) => {
-
+    let user;
     try {
 
         const token = req.header("Authorization").replace("Bearer ", "");
 
         const code = jwt.verify(token, "key")
 
-        const user = await userModel.findOne({
+        user = await seniorUserModel.findOne({
             _id: code._id,
             "tokens.token": token
         })
 
         if (!user) {
-            throw new Error()
+            user = await fresherUserModel.findOne({
+                _id: code._id,
+                "tokens.token": token
+            })
         }
+        if(!user){
+            throw new Error();
+        }
+        
         req.token = token;
         req.user = user;
         next();

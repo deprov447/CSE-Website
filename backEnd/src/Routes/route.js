@@ -5,12 +5,11 @@ const mongoose = require("mongoose");
 const router = express.Router();
 
 //Importing the model for user signUp
-const { userSchema, userModel } = require("../../models/user")
+const { userSchema, seniorUserModel, fresherUserModel } = require("../../models/user")
 
-//Importing the auth middleware
+//Importing the  middleware
 const auth = require("../../Middlewares/auth");
-
-const restriction = require("../../signUprestriction")
+const restriction = require("../../Middlewares/restriction")
 
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
@@ -33,15 +32,17 @@ router.get("/roadmap", (req, res) => {
 })
 
 //Router for creating a new User
-router.post("/users/signUp", async (req, res) => {
+router.post("/users/signUp", restriction, async (req, res) => {
+    let user;
     try {
-        const isMatch = await restriction(req.body.email);
-        
-        const user = new userModel(req.body);
-        
+        // const level = await restriction(req.body.email);
+
+        if (req.admin) user = new seniorUserModel(req.body);
+        if (!req.admin) user = new fresherUserModel(req.body);
+
         await user.save();
         const token = await user.authToken(user);
-        
+
         res.send({ user, token });
     } catch (error) {
         res.status(500).send(error.message)
@@ -51,9 +52,12 @@ router.post("/users/signUp", async (req, res) => {
 })
 
 //Route for user Login
-router.post("/users/login", async (req, res) => {
+router.post("/users/login", restriction, async (req, res) => {
+    let user;
     try {
-        const user = await userModel.verifyUser(req.body.email, req.body.password);
+        if (req.admin) user = await seniorUserModel.verifyUser(req.body.email, req.body.password);
+        if (!req.admin) user = await fresherUserModel.verifyUser(req.body.email, req.body.password);
+
         const token = await user.authToken(user);
         res.send({ user, token })
     } catch (error) {

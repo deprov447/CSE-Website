@@ -54,8 +54,17 @@ userSchema.pre("save", async function (next) {
 
 // Log in verification
 userSchema.statics.verifyUser = async (email, password) => {
-	const user = await userModel.findOne({ email })
+	let user;
+	user = await seniorUserModel.findOne({
+		email
+	})
 
+	if (!user) {
+		user = await fresherUserModel.findOne({
+			email
+		})
+	}
+	
 	if (!user) {
 		throw new Error("Wrong email or password")
 	}
@@ -76,8 +85,11 @@ userSchema.methods.authToken = async function (user) {
 }
 
 
-userModel = mongoose.model('Users', userSchema)
+seniorUserModel = mongoose.model('19-23_Batch', userSchema)
+fresherUserModel = mongoose.model('20-24_Batch', userSchema)
 
 module.exports = {
-	userSchema, userModel
+	userSchema,
+	seniorUserModel,
+	fresherUserModel
 }
