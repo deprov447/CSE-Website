@@ -28,3 +28,5 @@ Follow [Contribution Guidelines](https://github.com/deprov447/cse-fresher-websit
 To see the work done - [Click here](https://ancient-coast-19809.herokuapp.com/)
 
 ## Please create a new branch before any major change. Don't push directly to main branch.
+
+Thanks for everyone's effort.
