@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+const bcrypt = require("bcryptjs")
 
 const router = express.Router();
 
@@ -10,6 +10,7 @@ const { userSchema, seniorUserModel, fresherUserModel } = require("../../models/
 //Importing the  middleware
 const auth = require("../../Middlewares/auth");
 const restriction = require("../../Middlewares/restriction")
+const activate = require("../../Middlewares/activateUser")
 
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
@@ -35,13 +36,17 @@ router.get("/roadmap", (req, res) => {
 router.post("/users/signUp", restriction, async (req, res) => {
     let user;
     try {
-        // const level = await restriction(req.body.email);
 
-        if (req.admin) user = new seniorUserModel(req.body);
-        if (!req.admin) user = new fresherUserModel(req.body);
+
+        if (req.body.isAdmin) user = new seniorUserModel(req.body);
+        if (!req.body.isAdmin) user = new fresherUserModel(req.body);
 
         await user.save();
         const token = await user.authToken(user);
+
+        const hashedValue = await bcrypt.hash(req.rollNo, 8)
+        await user.addHashedValue(hashedValue);
+        //Send hashed value through email
 
         res.send({ user, token });
     } catch (error) {
@@ -55,8 +60,8 @@ router.post("/users/signUp", restriction, async (req, res) => {
 router.post("/users/login", restriction, async (req, res) => {
     let user;
     try {
-        if (req.admin) user = await seniorUserModel.verifyUser(req.body.email, req.body.password);
-        if (!req.admin) user = await fresherUserModel.verifyUser(req.body.email, req.body.password);
+        if (req.body.isAdmin) user = await seniorUserModel.verifyUser(req.body.email, req.body.password, req.body.isAdmin);
+        if (!req.body.isAdmin) user = await fresherUserModel.verifyUser(req.body.email, req.body.password, req.body.isAdmin);
 
         const token = await user.authToken(user);
         res.send({ user, token })
@@ -66,8 +71,11 @@ router.post("/users/login", restriction, async (req, res) => {
 })
 
 //Testing the auth verification
-router.get("/test", auth, (req, res) => {
-    res.send(req.user)
+router.post("/users/verify/:token", async (req, res) => {
+
+    activate(req.params.token);
+    res.send()
+
 })
 
 //Logout from a single device

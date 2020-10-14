@@ -9,12 +9,14 @@ const restriction = (req, res, next) => {
     const isSenior = reg.test(rollNo[0])
     const isFresher = reg2.test(rollNo[0])
 
+    req.rollNo = rollNo[0]
+    
     if (isSenior || transferStudentId.includes(rollNo[0].toLowerCase())) {
 
-        req.admin = true;
+        req.body.isAdmin = true;
         next();
     } else if (isFresher) {
-        req.admin = false;
+        req.body.isAdmin = false;
         next();
     } else {
         res.status(500).send("Student not from CSE 19-23 batch or 20-24 batch")
