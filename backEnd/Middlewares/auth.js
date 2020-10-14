@@ -10,17 +10,20 @@ const auth = async (req, res, next) => {
 
         const code = jwt.verify(token, "key")
 
-        user = await seniorUserModel.findOne({
-            _id: code._id,
-            "tokens.token": token
-        })
-
-        if (!user) {
+        if (code.isAdmin) {
+            user = await seniorUserModel.findOne({
+                _id: code._id,
+                "tokens.token": token
+            })
+        } else {
             user = await fresherUserModel.findOne({
                 _id: code._id,
                 "tokens.token": token
             })
         }
+        
+
+       
         if(!user){
             throw new Error();
         }
