@@ -4,22 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/theme.css" />
     <link rel="stylesheet" href="styles/gallery.css">
 </head>
-<body>
-  <%- include("partials/nav-up.ejs") %>
-  <div class="page-content">
 
-    <!-- add page content here -->
-    <h1>Gallery</h1>
-  
-    
-    
+  <body>
+ <%- include("partials/nav-up.ejs") %>
+<div class="container">
+<div class="nav-wrapper">
+  <div class="left-side">
+    <div class="gallery-title">
+      <h1>Gallery</h1>
+    </div>
+
+
   </div>
-  <%- include("partials/nav-down.ejs") %>
-    <script src="scripts/gallery.js"></script>
+
+
+</div>
+
+<div class="content-wrapper">
+  <div class="portfolio-items-wrapper">
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/edited1-01-01.jpeg"></div>
+
+      <div class="img-text-wrapper">
+        <div class="subtitle">Caption for Image 1</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG_20191108_171823-02-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+        <div class="subtitle">Caption for Image 2</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/_MG_9231-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+        <div class="subtitle">Caption for Image 3</div>
+
+       </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/NDS-110-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+        <div class="subtitle">Caption for Image 4</div>
+
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG20190810182603-01-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 5</div>
+
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG20200207215907-01-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 6</div>
+
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG20190821164234-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+          <div class="subtitle">Caption for Image 7</div>
+
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG20191016201618-02.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 8</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG20190821175441-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 9</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/KVu-11-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 10</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/LRM_EXPORT_60414087793168_20190922_171905387-01-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 11</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item-wrapper">
+      <div class="portfolio-img-background" style="background-image:url(gallerypics/IMG20200309204751-01.jpeg)"></div>
+      <div class="img-text-wrapper">
+
+
+        <div class="subtitle">Caption for Image 12</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<%- include("partials/nav-down.ejs") %>
 </body>
+<script>
+const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+portfolioItems.forEach(portfolioItem => {
+portfolioItem.addEventListener('mouseover', () => {
+  console.log(portfolioItem.childNodes[1].classList)
+  portfolioItem.childNodes[1].classList.add('image-blur');
+});
+
+portfolioItem.addEventListener('mouseout', () => {
+  console.log(portfolioItem.childNodes[1].classList)
+  portfolioItem.childNodes[1].classList.remove('image-blur');
+});
+});
+
+</script>
+
 </html>
