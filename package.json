@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node backEnd/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon backEnd/app.js"
+    "dev": "nodemon backEnd/app.js"
   },
   "engines": {
     "node": "14.13.0"
