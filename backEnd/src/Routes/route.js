@@ -1,16 +1,20 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs")
+const base_64 = require("base-64")
 
 const router = express.Router();
 
 //Importing the model for user signUp
-const { userSchema, seniorUserModel, fresherUserModel } = require("../../models/user")
+const { seniorUserModel, fresherUserModel } = require("../../models/user")
+const detailsModel = require("../../models/form")
 
 //Importing the  middleware
 const auth = require("../../Middlewares/auth");
 const restriction = require("../../Middlewares/restriction")
 const activate = require("../../Middlewares/activateUser")
+const upload = require("../../profile");
+
 
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
@@ -44,11 +48,11 @@ router.post("/users/signUp", restriction, async (req, res) => {
         await user.save();
         const token = await user.authToken(user);
 
-        const hashedValue = await bcrypt.hash(req.rollNo, 8)
-        await user.addHashedValue(hashedValue);
+        const encodedValue = await base_64.encode(req.rollNo);
+        await user.addEncodedValue(encodedValue);
         //Send hashed value through email
 
-        res.send({ user, token });
+        res.send({ user, token });//TNeed to hide the token
     } catch (error) {
         res.status(500).send(error.message)
 
@@ -90,6 +94,44 @@ router.post("/users/logout", auth, async (req, res) => {
     } catch (error) {
         res.status(500).send("Ërror")
     }
+})
+
+//Add user details 
+router.post("/users/info", auth, upload.single("profilePic"), async (req, res) => {
+    const user = req.user;
+
+    const detail = new detailsModel({
+        profilePic: req.file.buffer,
+        penName: req.body.penName,
+        message: req.body.message
+    })
+
+    await detail.save();
+
+    user.detailsId = detail._id;
+    user.save();
+
+    res.send("Saved")
+})
+
+// router.get("/users/get/profile",  async (req, res) => {
+//     const user2 = req.user;
+//     const user = await detailsModel.findById(user2.detailsId[0])
+
+//     res.set("Contet-Type", "image/jpg")
+
+//     res.send(user.profilePic)
+// })
+
+
+//Update 2019-23 batch details
+router.put("/users/info/update", auth, upload.single("profilePic"), async (req, res) => {
+    const user = req.user;
+
+    const update = await detailsModel.updateOne({ _id: user.detailsId[0] }, req.body);
+
+    res.send("Succes")
+
 })
 
 module.exports = router;
