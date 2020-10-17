@@ -1,0 +1,51 @@
+.page-content{
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23f7f7f7' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23eeeeee' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23e6e6e6' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23dedede' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23d6d6d6' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23cdcdcd' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23c5c5c5' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    /* background-position:50vw 0; */
+    padding: 25px
+}
+.view-one{
+    /* background-color: orange; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 25vw;
+}
+.view-one div{
+    /* background-color: aqua; */
+    width: 50vw;
+}
+.view-two{
+    min-height: 100vh;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.view-two .img-cont{
+    display: flex;
+    align-items: center;
+}
+.view-two .img-cont img{
+    max-width: 300px;
+    margin: 1.5vw;
+    box-shadow: 0px 0px 8px gray;
+}
+
+.view-two .img-cont img:hover{
+    box-shadow: 0px 0px 12px gray;
+    cursor: pointer;
+}
+.view-three{
+    margin-top: 20vh;
+    padding: 5vh 5vw;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    outline: 4px solid black;
+}
