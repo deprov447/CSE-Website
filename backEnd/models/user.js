@@ -39,7 +39,20 @@ let userSchema = new mongoose.Schema({
 		token: {
 			type: String
 		}
-	}]
+	}],
+	isactivate: {
+		activate: {
+			type: Boolean,
+			default: false
+		},
+		hashedToken: {
+			type: String
+		}
+
+	},
+	isAdmin: {
+		type: Boolean
+	}
 })
 
 //Hashing the password before saving in dataBase
@@ -53,14 +66,25 @@ userSchema.pre("save", async function (next) {
 })
 
 // Log in verification
-userSchema.statics.verifyUser = async (email, password) => {
-	const user = await userModel.findOne({ email })
+userSchema.statics.verifyUser = async (email, password, admin) => {
+	let user;
+
+	if (admin) {
+		user = await seniorUserModel.findOne({
+			email
+		})
+	} else {
+		user = await fresherUserModel.findOne({
+			email
+		})
+	}
 
 	if (!user) {
 		throw new Error("Wrong email or password")
 	}
 
 	const matchPass = await bcrypt.compare(password, user.password)
+
 	if (!matchPass) {
 		throw new Error("Wrong email or password")
 	}
@@ -69,15 +93,22 @@ userSchema.statics.verifyUser = async (email, password) => {
 
 //Generating authentication token
 userSchema.methods.authToken = async function (user) {
-	const token = jwt.sign({ _id: user._id.toString() }, "key")
+	const token = jwt.sign({ _id: user._id.toString(), isAdmin: user.isAdmin }, "key")
 	this.tokens.push({ token })
 	await this.save();
 	return token;
 }
 
+userSchema.methods.addHashedValue = async function (token) {
+	this.isactivate.hashedToken = token;
+	this.save();
+}
 
-userModel = mongoose.model('Users', userSchema)
+seniorUserModel = mongoose.model('19-23_Batch', userSchema)
+fresherUserModel = mongoose.model('20-24_Batch', userSchema)
 
 module.exports = {
-	userSchema, userModel
+	userSchema,
+	seniorUserModel,
+	fresherUserModel
 }

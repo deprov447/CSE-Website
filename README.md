@@ -19,7 +19,7 @@
   - else `git clone https://github.com/<your_handle_name>/cse-fresher-website`
 - Go to `cse-fresher-website` folder
 - Run `npm install`
-- Run `node backEnd/app.js`
+- Run `npm start`
 - Open `localhost:3000` on browser.
 - **Start Contributing**
 
@@ -28,3 +28,5 @@ Follow [Contribution Guidelines](https://github.com/deprov447/cse-fresher-websit
 To see the work done - [Click here](https://ancient-coast-19809.herokuapp.com/)
 
 ## Please create a new branch before any major change. Don't push directly to main branch.
+
+Thanks for everyone's effort.

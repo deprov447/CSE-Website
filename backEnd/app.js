@@ -5,6 +5,9 @@ const   express     = require("express"),
 
 const app = express();
 
+//Requiring the dataBase
+const dataBase = require("./database/mongo")
+
 
 //Requiring the route
 const route = require("./src/Routes/route")

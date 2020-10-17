@@ -137,6 +137,13 @@ nav {
   -o-transition: all 0.7s 0.6s ease-in-out;
   transition: all 0.7s 0.6s ease-in-out;
 }
+.sidebar-item:nth-child(4) {
+  -webkit-transition: all 0.7s 0.6s ease-in-out;
+  -moz-transition: all 0.7s 0.6s ease-in-out;
+  -ms-transition: all 0.7s 0.6s ease-in-out;
+  -o-transition: all 0.7s 0.6s ease-in-out;
+  transition: all 0.7s 0.6s ease-in-out;
+}
 
 .sidebar-item:last-child {
   -webkit-transition: all 0.7s 0.8s ease-in-out;
@@ -219,7 +226,6 @@ nav {
   }
 }
 
-@media (min-width: 768px) {
   .nav-right {
     position: absolute;
   }
@@ -229,4 +235,58 @@ nav {
   .visible-xs {
     display: none;
   }
+@media (max-width: 768px) {
+  .sidebar{
+    width: 100vw;
+  }
+   
+.move-to-left {
+  -webkit-transform: translateX(-100vw);
+  -moz-transform: translateX(-100vw);
+  -ms-transform: translateX(-100vw);
+  -o-transform: translateX(-100vw);
+  transform: translateX(-100vw);
+}
+}
+
+.com-btns{
+  text-align: center;
+  font-size: 1.5rem;
+}
+.com-btns hr{
+  color: white;
+}
+.com-btns div{
+  padding: 10px 0;
+}
+
+.com-btns div span{
+  padding: 10px;
+  /* float: left; */
+}
+
+#signup{
+  display: inline-block;
+  width: 49%;
+  margin: 0;
+}
+#signup a{
+  color: white;
+  text-decoration: none;
+}
+#login{
+  display: inline-block;
+  background-color: white;
+  transform: translateX(10px);
+  border-right:1px solid white ;
+  width: 49%;
+  margin: 0;
+}
+#login a{
+  text-decoration: none;
+  color: black;
+}
+#logout a{
+  text-decoration: none;
+  color: white;
 }
