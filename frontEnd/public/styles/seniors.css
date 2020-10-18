@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Quattrocento);
+
+/* body {
+  padding-top: 300px;
+  text-align: center;
+  justify-content: center;
+} */
+
+.gallery-title h1 {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  border-bottom: 5px solid black;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 20px;
+  line-height: 5%;
+}
+
+.snip1376 {
+  display: inline-block;
+  font-family: "Quattrocento", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #141414;
+  text-align: left;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+.snip1376 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.snip1376 img {
+  max-width: 100%;
+  vertical-align: top;
+}
+.snip1376 figcaption {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 15px 25px 65px;
+  position: relative;
+}
+.snip1376 figcaption:before {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+}
+.snip1376 h2,
+.snip1376 p {
+  margin: 0 0 10px;
+}
+.snip1376 h2 {
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  font-family: "Oswald", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.snip1376 p {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+.snip1376 .icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #e6e6e6;
+  width: 100%;
+  text-align: center;
+}
+.snip1376 i {
+  padding: 10px 5px;
+  display: inline-block;
+  font-size: 24px;
+  color: #141414;
+  opacity: 0.65;
+}
+.snip1376 i:hover {
+  opacity: 1;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}

@@ -6,19 +6,63 @@
     <title>Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet"> 
 
+    <!-- Mapbox .js and .css -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/theme.css" />
     <link rel="stylesheet" href="styles/roadmap.css">
 </head>
 <body>
+  
+  <!-- Needed for Directions API -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+  type="text/css"
+  />
+
   <%- include("partials/nav-up.ejs") %>
   <div class="page-content">
 
     <!-- add page content here -->
     <h1>Map to the college</h1>
-  
     
-    
+    <!-- id="map" is needed for Mapbox -->
+    <div id="map"></div>
+    <script>
+      if (!mapboxgl.supported()) {
+        alert('Your browser does not support Mapbox GL');
+      } else {
+        mapboxgl.accessToken = 'pk.eyJ1IjoieWFzaHQwMSIsImEiOiJja2c2bzA1NG0wM3ViMnhuNmVyNHYyZGFtIn0.piHlch1hfTMaiZyWkG7cng';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/navigation-preview-night-v4',
+            center: [85.743409, 20.295002], // [lng, lat]
+            zoom: 11 // starting zoom
+        });
+        
+        // Set marker
+        var marker = new mapboxgl.Marker()
+        .setLngLat([85.743409, 20.295002])
+        .addTo(map);
+
+        // Add Directions API
+        map.addControl(
+        new MapboxDirections({
+          accessToken: mapboxgl.accessToken
+        }),
+          'top-left'
+        );
+      }
+
+    </script>
+   
   </div>
   <%- include("partials/nav-down.ejs") %>
   <script src="scripts/roadmap.js"></script>
