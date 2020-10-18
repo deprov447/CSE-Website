@@ -292,4 +292,6 @@ nav {
 }
 .page-content{
   background-color: white;
+  min-height: 100vh;
+  padding-bottom: 10vh;
 }
