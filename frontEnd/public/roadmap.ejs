@@ -6,7 +6,7 @@
     <title>Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet"> 
 
-    <!-- Mapbox CDN -->
+    <!-- Mapbox .js and .css -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -33,7 +33,8 @@
     <!-- add page content here -->
     <h1>Map to the college</h1>
     
-    <div id="map" class="col-sm-12 col-lg-6"></div>
+    <!-- id="map" is needed for Mapbox -->
+    <div id="map"></div>
     <script>
       if (!mapboxgl.supported()) {
         alert('Your browser does not support Mapbox GL');
@@ -43,9 +44,8 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/navigation-preview-night-v4',
             center: [85.743409, 20.295002], // [lng, lat]
-            zoom: 10 // starting zoom
+            zoom: 11 // starting zoom
         });
-        map.resize();
         
         // Set marker
         var marker = new mapboxgl.Marker()
