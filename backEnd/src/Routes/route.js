@@ -5,9 +5,10 @@ const base_64 = require("base-64")
 
 const router = express.Router();
 
-//Importing the model for user signUp
+//Importing the model 
 const { seniorUserModel, fresherUserModel } = require("../../models/user")
 const detailsModel = require("../../models/form")
+
 
 //Importing the  middleware
 const auth = require("../../Middlewares/auth");
@@ -34,6 +35,9 @@ router.get("/gallery", (req, res) => {
 
 router.get("/roadmap", (req, res) => {
     res.render("../frontEnd/public/roadmap.ejs")
+})
+router.get("/signUp", (req, res) => {
+    res.render("../frontEnd/public/signUp.ejs")
 })
 
 //Router for creating a new User
@@ -96,7 +100,7 @@ router.post("/users/logout", auth, async (req, res) => {
     }
 })
 
-//Add user details 
+//form details of freshers
 router.post("/users/info", auth, upload.single("profilePic"), async (req, res) => {
     const user = req.user;
 
@@ -110,28 +114,29 @@ router.post("/users/info", auth, upload.single("profilePic"), async (req, res) =
 
     user.detailsId = detail._id;
     user.save();
+    
+    
 
     res.send("Saved")
 })
 
-// router.get("/users/get/profile",  async (req, res) => {
-//     const user2 = req.user;
-//     const user = await detailsModel.findById(user2.detailsId[0])
-
-//     res.set("Contet-Type", "image/jpg")
-
-//     res.send(user.profilePic)
-// })
-
-
-//Update 2019-23 batch details
-router.put("/users/info/update", auth, upload.single("profilePic"), async (req, res) => {
-    const user = req.user;
-
-    const update = await detailsModel.updateOne({ _id: user.detailsId[0] }, req.body);
-
-    res.send("Succes")
-
+//Send the file throught this route
+router.get("/seniors/info",  async (req, res) => {
+    res.sendFile()    
+  
 })
+
+
+
+//Update form if required
+
+// router.put("/users/info/update", auth, upload.single("profilePic"), async (req, res) => {
+//     const user = req.user;
+
+//     const update = await detailsModel.updateOne({ _id: user.detailsId[0] }, req.body);
+
+//     res.send("Succes")
+
+// })
 
 module.exports = router;

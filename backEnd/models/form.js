@@ -24,5 +24,5 @@ let detailSchema = new mongoose.Schema({
 	}
 })
 
-detailsModel =  mongoose.model('2019-23_Batch_details', detailSchema)
+detailsModel =  mongoose.model('2020-24_Batch_details', detailSchema)
 module.exports = detailsModel;
