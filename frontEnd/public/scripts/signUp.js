@@ -3,8 +3,7 @@ const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
 
 
-//Initially hide the data element
-emailError.style.display = "hidden"
+
 
 sign_up_btn.addEventListener("click", () => {
 	container.classList.add("sign-up-mode");
