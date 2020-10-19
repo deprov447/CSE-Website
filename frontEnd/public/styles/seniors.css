@@ -10,14 +10,9 @@
 
 .gallery-title h1 {
   text-align: center;
-  font-size: 50px;
-  font-family: "Montserrat", sans-serif;
-  color: black;
-  border-bottom: 5px solid black;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-bottom: 20px;
-  line-height: 5%;
+  /* font-size: 50px; */
+  padding: 100px 0;
+  margin: 0;
 }
 
 .snip1376 {
@@ -96,4 +91,10 @@
   opacity: 1;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
+}
+.wrpr{
+  padding: 0 5vw 5vw 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
