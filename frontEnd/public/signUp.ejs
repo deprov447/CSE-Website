@@ -17,11 +17,11 @@
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
+                        <input type="text" placeholder="Username"  required pattern="\w+@\w+"/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password"  />
                     </div>
                     <input type="submit" value="Login" class="btn solid" />
 
@@ -30,17 +30,18 @@
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username"  />
-                        
+                        <input type="text" placeholder="Username" required/>
+
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" id="form_email"/>
-                        <span id="email_error">Please fill Email</span>
+                        <input type="email" placeholder="Email" required pattern="\w+@\w+"/>
+                        
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password" required minlength="6"/>
+                        
                     </div>
                     <input type="submit" class="btn" value="Sign up" />
 
@@ -77,7 +78,7 @@
             </div>
         </div>
     </div>
-
+    
     <script src="./scripts/signUp.js"></script>
 </body>
 
