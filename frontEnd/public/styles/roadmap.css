@@ -1,0 +1,20 @@
+body{
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    /* margin: 10vh; */
+    padding: 5vh;
+}
+
+#map {
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+}
+a,a:hover{
+    text-decoration: none;
+    color: white;
+}
