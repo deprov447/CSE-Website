@@ -5,27 +5,24 @@ let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 // create a Schema
-let Detail = new mongoose.Schema({
-	
-	// Can add anything that we want to store in our database...
-	
-	
-	
-// 	name: {
-// 		type: String,
-// 		trim: true,
-// 		required: "input name, field can not be empty"
-// 	},
-// 	email: {
-// 		type: String,
-// 		trim: true,
-// 		required: "can not post empty email"
-// 	},
-// 	address: {
-// 		type: String,
-// 		trim: true,
-// 		required: "can not post empty address"
-// 	}
+let detailSchema = new mongoose.Schema({
+	profilePic:{
+		type:Buffer
+	},
+	penName: {
+		type: String,
+		// trim: true,
+		// required: "field can not be empty"
+	},
+	message: {
+		type: String,
+	},
+	link: {
+		insta: {
+			type: String,
+		}
+	}
 })
 
-module.exports = mongoose.model('Detail', Detail)
+detailsModel =  mongoose.model('2020-24_Batch_details', detailSchema)
+module.exports = detailsModel;

@@ -52,7 +52,10 @@ let userSchema = new mongoose.Schema({
 	},
 	isAdmin: {
 		type: Boolean
-	}
+	},
+	detailsId: [{
+		type: mongoose.Schema.Types.ObjectId
+	}]
 })
 
 //Hashing the password before saving in dataBase
@@ -99,7 +102,7 @@ userSchema.methods.authToken = async function (user) {
 	return token;
 }
 
-userSchema.methods.addHashedValue = async function (token) {
+userSchema.methods.addEncodedValue = async function (token) {
 	this.isactivate.hashedToken = token;
 	this.save();
 }

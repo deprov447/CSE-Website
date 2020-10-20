@@ -31,3 +31,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log("Server started on localhost:3000");
 })
+
+// env-cmd -f ./backEnd/config/dev.env
