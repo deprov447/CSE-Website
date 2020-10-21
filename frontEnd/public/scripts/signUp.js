@@ -38,7 +38,33 @@ function signUpfunc() {
 			
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
-			alert(`User sign up failed ${xhr.responseText}`)
+			alert(`User sign up failed, ${xhr.responseText}`)
+			
+		},
+		data: JSON.stringify(person)
+	});
+
+}
+function signInfunc() {
+	var person = {
+		
+		email: $("#signIn_email").val(),
+		password: $("#signIn_password").val()
+	}
+	$.ajax({
+		url: '/users/login',
+		type: 'post',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: function (data) {
+			
+			window.localStorage.setItem("token",data.token)
+			window.location.href = "/"
+			
+			
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			alert(`User sign up failed, ${xhr.responseText}`)
 			
 		},
 		data: JSON.stringify(person)
