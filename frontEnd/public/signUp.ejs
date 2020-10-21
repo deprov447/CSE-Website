@@ -27,7 +27,7 @@
                     <input type="submit" value="Login" class="btn solid" id="signIn_btn"/>
 
                 </form>
-                <form class="sign-up-form">
+                <form class="sign-up-form" onsubmit="signUpfunc();return false">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" required pattern="\w+@\w+" id="signup_email" />
+                        <input type="email" placeholder="Email" required pattern="\S+@\S+" id="signup_email" />
 
                     </div>
                     <div class="input-field">

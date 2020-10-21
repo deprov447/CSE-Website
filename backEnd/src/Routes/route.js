@@ -40,6 +40,12 @@ router.get("/signUp", (req, res) => {
     res.render("../frontEnd/public/signUp.ejs")
 })
 
+router.get("/activate/:token", async (req, res) => {
+    
+    res.render("../frontEnd/public/validate.ejs")
+
+})
+
 //Router for creating a new User
 router.post("/users/signUp", restriction, async (req, res) => {
     let user;
@@ -78,11 +84,11 @@ router.post("/users/login", restriction, async (req, res) => {
     }
 })
 
-//Testing the auth verification
-router.post("/users/verify/:token", async (req, res) => {
 
-    activate(req.params.token);
-    res.send()
+router.get("/activate/:token/users", async (req, res) => {
+
+    const tokens = await activate(req.params.token);    
+    res.send(tokens)
 
 })
 
