@@ -239,7 +239,24 @@ nav {
   .sidebar{
     width: 100vw;
   }
-   
+  .inner-button{
+    display: flex;
+    position: fixed;
+    font-size: 3.5rem;
+    bottom: 0px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 10px 30px;
+    background-color: white;
+    align-items: center;
+  }
+  .inner-button div{
+    display: inline-block;
+    font-size: 1.5rem;
+    width: 75%;
+    text-align: center;
+    font-weight: 700;
+  }
 .move-to-left {
   -webkit-transform: translateX(-100vw);
   -moz-transform: translateX(-100vw);
@@ -294,4 +311,9 @@ nav {
   background-color: white;
   min-height: 100vh;
   padding-bottom: 10vh;
+}
+@media (min-width: 768px) {
+.inner-button{
+  display: none;
+}
 }
