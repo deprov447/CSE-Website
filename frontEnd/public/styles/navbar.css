@@ -6,6 +6,7 @@
   z-index: 1;
   right: 0;
   background-color: black;
+  overflow-y: scroll;
 }
 
 .bar {
@@ -100,7 +101,7 @@ nav {
   margin: 0;
   list-style: none;
   position: relative;
-  margin-top: 150px;
+  margin:150px 0;
   text-align: center;
 }
 
