@@ -17,3 +17,12 @@ main {
   -o-transition: transform 0.7s ease-in-out;
   transition: transform 0.7s ease-in-out;
 }
+
+.main_heading{
+  padding: 7.5vh 0;
+  margin: 0;
+  margin-bottom: 2.5vh;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+}
