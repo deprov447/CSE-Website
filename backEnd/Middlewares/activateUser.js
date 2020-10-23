@@ -16,12 +16,12 @@ const activate = async (token) => {
             res.send("Wrong activation code")
         } else {
             verified(user2)
-
+            return user2.tokens[0].token;
         }
     }
     else {
         verified(user)
-
+        return user.tokens[0].token;
     }
 
 }

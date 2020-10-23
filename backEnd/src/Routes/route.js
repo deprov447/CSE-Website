@@ -40,6 +40,12 @@ router.get("/signUp", (req, res) => {
     res.render("../frontEnd/public/signUp.ejs")
 })
 
+router.get("/activate/:token", async (req, res) => {
+    
+    res.render("../frontEnd/public/validate.ejs")
+
+})
+
 //Router for creating a new User
 router.post("/users/signUp", restriction, async (req, res) => {
     let user;
@@ -56,7 +62,7 @@ router.post("/users/signUp", restriction, async (req, res) => {
         await user.addEncodedValue(encodedValue);
         //Send hashed value through email
 
-        res.send({ user, token });//TNeed to hide the token
+        res.sendStatus(200);
     } catch (error) {
         res.status(500).send(error.message)
 
@@ -72,17 +78,17 @@ router.post("/users/login", restriction, async (req, res) => {
         if (!req.body.isAdmin) user = await fresherUserModel.verifyUser(req.body.email, req.body.password, req.body.isAdmin);
 
         const token = await user.authToken(user);
-        res.send({ user, token })
+        res.status(200).send({token})
     } catch (error) {
         res.status(500).send(error.message)
     }
 })
 
-//Testing the auth verification
-router.post("/users/verify/:token", async (req, res) => {
 
-    activate(req.params.token);
-    res.send()
+router.get("/activate/:token/users", async (req, res) => {
+
+    const tokens = await activate(req.params.token);    
+    res.send(tokens)
 
 })
 

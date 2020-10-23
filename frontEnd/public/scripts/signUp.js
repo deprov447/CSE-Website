@@ -21,36 +21,7 @@ sign_in_btn.addEventListener("click", () => {
 	container.classList.remove("sign-up-mode");
 });
 
-//Making an AJAX request
-// signUpbtn.addEventListener("click", (e) => {
-// 	const xhr = new XMLHttpRequest();
-// 	xhr.open("POST", "/users/signUp", true);
-// 	xhr.getResponseHeader("Content-Type", "application/json");
-// 	xhr.onload = function () {
-// 		if (this.status == 200) {
-// 			console.log(this.responseText)
-// 		} else {
-// 			console.log(this.responseText)
-// 		}
-
-// 	}
-
-// 	var params = `{
-// 		"username":"ma",
-// 		"email":"B120076@iiit-bh.ac.in",
-// 		"password":"sanddd123"
-// 	}`
-// 	// params = `{"name":"test34sad545","salary":"123","age":"23"}`;
-// 	// console.log(JSON.stringify(params))
-// 	xhr.send(params);
-// })
-
-
-
-
-
-// $('#target').html('sending..');
-$("#signUp_btn").click(function () {
+function signUpfunc() {
 	var person = {
 		username: $("#signUp_username").val(),
 		email: $("#signup_email").val(),
@@ -63,16 +34,42 @@ $("#signUp_btn").click(function () {
 		contentType: 'application/json',
 		success: function (data) {
 			alert("Please validate your email by clicking on the link sent to your mail")
-			console.log(data.msg)
-			// $('#target').html(data.msg);
+			
+			
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
-			alert(`User sign up failed ${xhr.responseText}`)
-			// console.log()
+			alert(`User sign up failed, ${xhr.responseText}`)
+			
 		},
 		data: JSON.stringify(person)
 	});
 
-})
+}
+function signInfunc() {
+	var person = {
+		
+		email: $("#signIn_email").val(),
+		password: $("#signIn_password").val()
+	}
+	$.ajax({
+		url: '/users/login',
+		type: 'post',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: function (data) {
+			
+			window.localStorage.setItem("token",data.token)
+			window.location.href = "/"
+			
+			
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			alert(`User sign up failed, ${xhr.responseText}`)
+			
+		},
+		data: JSON.stringify(person)
+	});
+
+}
 
 
