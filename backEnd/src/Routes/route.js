@@ -36,6 +36,10 @@ router.get("/gallery", (req, res) => {
 router.get("/roadmap", (req, res) => {
     res.render("../frontEnd/public/roadmap.ejs")
 })
+router.get("/QuizAns",(req, res) => {
+    res.render("../frontEnd/public/quizAns.ejs")
+})
+
 router.get("/signUp", (req, res) => {
     res.render("../frontEnd/public/signUp.ejs")
 })

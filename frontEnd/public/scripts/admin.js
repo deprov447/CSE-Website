@@ -1,5 +1,5 @@
 $("#quiz").hide();
-// $("#quizAns").hide();
+$("#quizAns").hide();
 
 if (window.localStorage.getItem("token") != null) {
 
@@ -15,7 +15,7 @@ if (window.localStorage.getItem("token") != null) {
 }
 
 function showData(data) {
-    console.log(data.admin)
+    
     if(data.admin){
         $("#quizAns").show();
     }else{
