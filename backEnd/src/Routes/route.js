@@ -15,7 +15,7 @@ const auth = require("../../Middlewares/auth");
 const restriction = require("../../Middlewares/restriction")
 const activate = require("../../Middlewares/activateUser")
 const upload = require("../../profile");
-
+const admin  =require("../../Middlewares/admin")
 
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
@@ -62,7 +62,7 @@ router.post("/users/signUp", restriction, async (req, res) => {
         await user.addEncodedValue(encodedValue);
         //Send hashed value through email
 
-        res.sendStatus(200);
+        res.send({})
     } catch (error) {
         res.status(500).send(error.message)
 
@@ -132,7 +132,13 @@ router.get("/seniors/info",  async (req, res) => {
   
 })
 
-
+router.get("/adminVerify",admin, async(req,res)=>{
+    if(req.isAdmin){
+        res.send({admin:true})
+    }else{
+        res.send({admin:false})
+    }
+})
 
 //Update form if required
 

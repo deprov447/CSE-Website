@@ -6,6 +6,7 @@ $("#logout").click(function() {
         success: function (data) {
             window.localStorage.removeItem("token")
             alert("successfully logged out")
+            location.href="/"
         },
       });
 })
