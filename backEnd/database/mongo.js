@@ -3,7 +3,7 @@ let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 // Start connection
-mongoose.connect("mongodb://127.0.0.1/freshersWebsite", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((e) => {
+mongoose.connect("mongodb://localhost:27017/fresherWebsite", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((e) => {
 	console.log('Connected to MongoDB! 😃🔥')
 }).catch((e) => {
 	console.error('Failed to connect to MongoDB 😕💥 ')
