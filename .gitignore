@@ -62,3 +62,6 @@ config/dev.env
 
 #DS Store
 *.DS_Store
+
+#APIkey
+backEnd/config/dev.json
