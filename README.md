@@ -18,6 +18,15 @@
   - If owner, run `git clone https://github.com/deprov447/cse-fresher-website`
   - else `git clone https://github.com/<your_handle_name>/cse-fresher-website`
 - Go to `cse-fresher-website` folder
+- Create a file `dev.json` in `backEnd/config` and paste this :
+
+> {
+>   "PORT": 3000,
+>   "MONGO_URL": "db_server",
+>   "APIKEY": "dev",
+>   "TOKEN_KEY": "token"
+> }
+
 - Run `npm install`
 - Run `npm start`
 - Open `localhost:3000` on browser.
