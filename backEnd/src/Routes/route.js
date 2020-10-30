@@ -156,4 +156,18 @@ router.get("/adminVerify", admin, async (req, res) => {
 
 // })
 
+const db_2nd = require("../../staticDB/db2nd.json") //2nd Years Data
+const db_3rd = require("../../staticDB/db3rd.json") //3rd Years Data
+const db_4th = require("../../staticDB/db4th.json") //4th Years Data
+
+router.get("/seniors/2nd",(req,res)=>{
+    res.render("../frontEnd/public/demo.ejs",{data:db_2nd})
+})
+router.get("/seniors/3rd",(req,res)=>{
+    res.render("../frontEnd/public/demo.ejs",{data:db_3rd})
+})
+router.get("/seniors/4th",(req,res)=>{
+    res.render("../frontEnd/public/demo.ejs",{data:db_4th})
+})
+
 module.exports = router;
