@@ -15,8 +15,9 @@ const auth = require("../../Middlewares/auth");
 const restriction = require("../../Middlewares/restriction")
 const activate = require("../../Middlewares/activateUser")
 const upload = require("../../profile");
-const admin = require("../../Middlewares/admin")
 
+
+//ROUTES FOR RENDERING STATIC PAGE
 router.get("/", (req, res) => {
     res.render("../frontEnd/public/index")
 })
@@ -50,7 +51,8 @@ router.get("/activate/:token", async (req, res) => {
 
 })
 
-//Router for creating a new User
+
+//Route for creating a new User
 router.post("/users/signUp", restriction, async (req, res) => {
     let user;
     try {
@@ -67,7 +69,7 @@ router.post("/users/signUp", restriction, async (req, res) => {
         mail(encodedValue, req.body.email)
         //Send hashed value through email
 
-        res.send({})
+        res.send({ token })
     } catch (error) {
         res.status(500).send(error.message)
 
@@ -137,11 +139,15 @@ router.get("/seniors/info", async (req, res) => {
 
 })
 
-router.get("/adminVerify", admin, async (req, res) => {
-    if (req.isAdmin) {
+router.get("/adminVerify", auth, async (req, res) => {
+    const user = req.user;
+
+    if (req.isAdmin && user.isactivate.activate) {
         res.send({ admin: true })
-    } else {
+    } else if (!req.isAdmin && user.isactivate.activate) {
         res.send({ admin: false })
+    } else {
+        res.status(400).send({});
     }
 })
 

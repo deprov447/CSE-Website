@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs")
 
 //Importing module for generating token
 const jwt = require("jsonwebtoken")
-
+const TOKEN_KEY = require("../config/dev.json").TOKEN_KEY
 // import promise
 mongoose.Promise = global.Promise
 
@@ -96,7 +96,7 @@ userSchema.statics.verifyUser = async (email, password, admin) => {
 
 //Generating authentication token
 userSchema.methods.authToken = async function (user) {
-	const token = jwt.sign({ _id: user._id.toString(), isAdmin: user.isAdmin }, "key")
+	const token = jwt.sign({ _id: user._id.toString(), isAdmin: user.isAdmin }, TOKEN_KEY)
 	this.tokens.push({ token })
 	await this.save();
 	return token;

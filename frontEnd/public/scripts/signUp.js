@@ -5,11 +5,7 @@ const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
 
-// const signUpbtn = document.getElementById("signIn_btn");
 
-// const signUp_username = document.getElementById("signUp_username")
-// const signUp_email = document.getElementById("signUp_email")
-// const signUp_password = document.getElementById("signUp_password")
 
 
 
@@ -34,7 +30,7 @@ function signUpfunc() {
 		contentType: 'application/json',
 		success: function (data) {
 			alert("Please validate your email by clicking on the link sent to your mail")
-			
+			window.localStorage.setItem("token",data.token)
 			
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
