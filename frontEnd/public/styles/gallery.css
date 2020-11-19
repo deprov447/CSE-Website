@@ -152,7 +152,7 @@ transform:  rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
    }
 
    .profile-content-wrapper h1 {
-     color: lightseagreen;
+    color: white;
    }
    .gallery-title h1{
         padding-top: 20px;
@@ -276,7 +276,7 @@ transform:  rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
         }
 
         .img-text-wrapper:hover .subtitle {
-          color: lightseagreen;
+     color: white;
           font-weight: 600;
         }
 
@@ -299,7 +299,7 @@ transform:  rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
         }
 
         .profile-content-wrapper h1 {
-          color: lightseagreen;
+     color: white;
         }
         .gallery-title h1{
              padding-top: 20px;
