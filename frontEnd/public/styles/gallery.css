@@ -104,6 +104,14 @@ body{
    }
 
    .img-text-wrapper .subtitle {
+
+     font-size: 1.5rem;
+     -webkit-transform: rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
+-moz-transform: rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
+-ms-transform: rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
+-o-transform: rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
+transform:  rotateY(-149deg) scale(0.3) skewX(-74deg) skewY(22deg);
+     font-weight: 600;
      transition: 1s;
      color: transparent;
    }
@@ -114,7 +122,14 @@ body{
    }
 
    .img-text-wrapper:hover .subtitle {
-     color: lightseagreen;
+    -webkit-transform: skewX(0deg) skewY(0deg) scale(1) rotateY(0);
+    -moz-transform: skewX(0deg) skewY(0deg) scale(1) rotateY(0);
+    -ms-transform: skewX(0deg) skewY(0deg) scale(1) rotateY(0);
+    -o-transform: skewX(0deg) skewY(0deg) scale(1) rotateY(0);
+    transform:  skewX(0deg) skewY(0deg) scale(1) rotateY(0);
+     color: white;
+     cursor: pointer;
+     font-size: 1.5rem;
      font-weight: 600;
    }
 
@@ -137,7 +152,7 @@ body{
    }
 
    .profile-content-wrapper h1 {
-     color: lightseagreen;
+    color: white;
    }
    .gallery-title h1{
         padding-top: 20px;
@@ -261,7 +276,7 @@ body{
         }
 
         .img-text-wrapper:hover .subtitle {
-          color: lightseagreen;
+     color: white;
           font-weight: 600;
         }
 
@@ -284,7 +299,7 @@ body{
         }
 
         .profile-content-wrapper h1 {
-          color: lightseagreen;
+     color: white;
         }
         .gallery-title h1{
              padding-top: 20px;

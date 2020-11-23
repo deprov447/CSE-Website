@@ -8,15 +8,21 @@
 }
 .view-one{
     /* background-color: orange; */
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 25vw;
+    margin-bottom: 600px;
 }
 .view-one div{
     /* background-color: aqua; */
     width: 50vw;
+}
+@media (max-width: 768px) {   
+    .view-one div{
+        /* background-color: aqua; */
+        width: 90vw;
+    }
 }
 .view-two{
     min-height: 100vh;
@@ -47,4 +53,30 @@
     color: white;
     border: 1px solid white;
     outline: 4px solid black;
+}
+
+h2{
+    line-height: 50px;
+}
+h4{
+    /* font-size: large; */
+    margin: 50px;
+}
+h5{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    line-height: 50px;
+}
+p{
+    margin: 50px;
+    font-size: 15px;
+    font-weight: 600;
+}
+h6{
+    margin: 50px;
+}
+ul.advise li{
+    font-size: 20px;
+    /* color: red; */
+    list-style-type: disclosure-closed;
 }
