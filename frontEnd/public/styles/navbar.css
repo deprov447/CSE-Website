@@ -21,6 +21,7 @@
   cursor: pointer;
   display: inline-block;
   width: auto;
+  z-index: 4;
   margin: 4.5vh auto;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
@@ -30,6 +31,7 @@
 }
 
 .nav-right {
+  z-index: 99;
   position: fixed;
   right: 40px;
   top: 20px;

@@ -80,3 +80,17 @@ ul.advise li{
     /* color: red; */
     list-style-type: disclosure-closed;
 }
+
+/* canvas {
+display: block;
+vertical-align: bottom;
+} */
+
+#particles-js {
+/* z-index: -1; */
+position: fixed;
+width: 100vw;
+height: 100vh;
+/* background: #00356B; */
+}
+  
