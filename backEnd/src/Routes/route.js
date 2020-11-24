@@ -162,4 +162,12 @@ router.get("/adminVerify", auth, async (req, res) => {
 
 // })
 
+router.get("/form",function(req,res){
+    res.render("../frontEnd/public/form.ejs")
+})
+
+router.post("/formSubmit",function(req,res){
+    console.log(req.body)
+    res.redirect("/form")
+})
 module.exports = router;
