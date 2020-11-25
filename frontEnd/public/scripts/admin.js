@@ -2,7 +2,7 @@ $("#quiz").hide();
 $("#quizAns").hide();
 
 if (window.localStorage.getItem("token") != null) {
-
+    $("#signup").hide();
     $.ajax({
         url: "/adminVerify",
         type: 'GET',
@@ -12,6 +12,8 @@ if (window.localStorage.getItem("token") != null) {
             showData(data);
         },
       });
+}else{
+    $("#logout").hide()
 }
 
 function showData(data) {

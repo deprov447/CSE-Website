@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/theme.css" />
-    <link rel="stylesheet" href="styles/introduction.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/introduction.css">
 </head>
+
 <body>
   <%- include("partials/nav-up.ejs") %>
   <div class="page-content">
@@ -17,16 +20,15 @@
     <h1 class="main_heading">Introduction</h1>
 
     <% for(var i=0;i<5;i++){ %>
-      <h1>Hellmo</h1>
+    <h1>Hellmo</h1>
     <% } %>
+    <div id="formLink">
 
-    <a href="/form">ADD NEW</a>
-
-  
-    
-    
+      <a href="/form">ADD NEW</a>
+    </div>
   </div>
   <%- include("partials/nav-down.ejs") %>
-    <script src="scripts/introduction.js"></script>
+  <script src="scripts/introduction.js"></script>
 </body>
+
 </html>

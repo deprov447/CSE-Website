@@ -2,7 +2,7 @@ let MONGO_URL = require("../config/dev.json").MONGO_URL;
 
 
 //Delete this before hosting
-MONGO_URL = "mongodb://localhost:27017/fresherWebsite"
+// MONGO_URL = "mongodb://localhost:27017/fresherWebsite"
 
 // Require MongoDB
 let mongoose = require('mongoose')

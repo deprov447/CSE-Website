@@ -66,7 +66,7 @@ router.post("/users/signUp", restriction, async (req, res) => {
 
         const encodedValue = await base_64.encode(req.rollNo);
         await user.addEncodedValue(encodedValue);
-        mail(encodedValue, req.body.email)
+        // mail(encodedValue, req.body.email)
         //Send hashed value through email
 
         res.send({ token })
@@ -114,30 +114,25 @@ router.post("/users/logout", auth, async (req, res) => {
 })
 
 //form details of freshers
-router.post("/users/info", auth, upload.single("profilePic"), async (req, res) => {
-    const user = req.user;
+// router.post("/users/info", auth, upload.single("profilePic"), async (req, res) => {
+//     const user = req.user;
 
-    const detail = new detailsModel({
-        profilePic: req.file.buffer,
-        penName: req.body.penName,
-        message: req.body.message
-    })
+//     const detail = new detailsModel({
+//         profilePic: req.file.buffer,
+//         penName: req.body.penName,
+//         message: req.body.message
+//     })
 
-    await detail.save();
+//     await detail.save();
 
-    user.detailsId = detail._id;
-    user.save();
+//     user.detailsId = detail._id;
+//     user.save();
 
 
 
-    res.send("Saved")
-})
+//     res.send("Saved")
+// })
 
-//Send the file throught this route
-router.get("/seniors/info", async (req, res) => {
-    res.sendFile()
-
-})
 
 router.get("/adminVerify", auth, async (req, res) => {
     const user = req.user;
@@ -162,12 +157,28 @@ router.get("/adminVerify", auth, async (req, res) => {
 
 // })
 
-router.get("/form",function(req,res){
+router.get("/form", function (req, res) {
+
     res.render("../frontEnd/public/form.ejs")
+
+
 })
 
-router.post("/formSubmit",function(req,res){
-    console.log(req.body)
-    res.redirect("/form")
+
+
+router.post("/formSubmit",auth, async(req, res)=> {
+
+    const user = req.user;
+
+    const detail = new detailsModel(req.body)
+
+    await detail.save();
+
+    user.detailsId = detail._id;
+    user.save();
+
+
+
+    res.send("Saved")
 })
 module.exports = router;

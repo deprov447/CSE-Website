@@ -6,15 +6,18 @@ mongoose.Promise = global.Promise
 
 // create a Schema
 let detailSchema = new mongoose.Schema({
-	profilePic:{
-		type:Buffer
+	Roll:{
+		type:String
 	},
-	penName: {
+	image:{
+		type:String,
+	},
+	name: {
 		type: String,
 		// trim: true,
 		// required: "field can not be empty"
 	},
-	message: {
+	hobbies: {
 		type: String,
 	},
 	link: {
