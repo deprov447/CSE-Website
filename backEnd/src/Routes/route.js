@@ -157,7 +157,7 @@ router.get("/adminVerify", auth, async (req, res) => {
 
 // })
 
-router.get("/form", function (req, res) {
+router.get("/form",auth , function (req, res) {
 
     res.render("../frontEnd/public/form.ejs")
 
