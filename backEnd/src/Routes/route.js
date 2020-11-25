@@ -26,8 +26,10 @@ router.get("/seniors", (req, res) => {
     res.render("../frontEnd/public/knowYourSeniors")
 })
 
-router.get("/introduce", (req, res) => {
-    res.render("../frontEnd/public/juniorIntro.ejs")
+router.get("/introduce", async (req, res) => {
+    const data = await detailsModel.find({});
+    len = data.length;
+    res.render("../frontEnd/public/juniorIntro.ejs", { data, len })
 })
 
 router.get("/gallery", (req, res) => {
@@ -157,7 +159,7 @@ router.get("/adminVerify", auth, async (req, res) => {
 
 // })
 
-router.get("/form",auth , function (req, res) {
+router.get("/form", function (req, res) {
 
     res.render("../frontEnd/public/form.ejs")
 
@@ -166,19 +168,23 @@ router.get("/form",auth , function (req, res) {
 
 
 
-router.post("/formSubmit",auth, async(req, res)=> {
+router.post("/formSubmit", auth, async (req, res) => {
 
     const user = req.user;
+    if (!req.isAdmin && user.isactivate.activate) {
+        const detail = new detailsModel(req.body)
 
-    const detail = new detailsModel(req.body)
+        await detail.save();
 
-    await detail.save();
-
-    user.detailsId = detail._id;
-    user.save();
+        user.detailsId = detail._id;
+        user.save();
 
 
 
-    res.send("Saved")
+        res.send("Saved")
+    } else {
+        res.sendStatus(404);
+    }
+
 })
 module.exports = router;
