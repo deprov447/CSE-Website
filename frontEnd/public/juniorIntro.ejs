@@ -16,36 +16,43 @@
   <%- include("partials/nav-up.ejs") %>
   <div class="page-content">
 
-    <!-- add page content here -->
-    <h1 class="main_heading">Introduction</h1>
-    <% for(var i=0;i<len;i++){ %>
-    <div class="center">
-      <div class="front-face">
-        <div class="contents front">
-          <p>
-            <%= data[i].name%></p>
-          <span><%= data[i].image%></span>
-        </div>
-      </div>
-      <div class="back-face">
-        <div class="contents back">
-          <h2>
-            <%= data[i].hobbies%></h2>
-          <span>Follow Me</span>
-          <div class="icons">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="left-side">
+          <div class="gallery-title">
+            <h1 class="main_heading">Introduction</h1>
           </div>
         </div>
       </div>
+      <div class="wrpr">
+        <!-- add page content here -->
+        <% for(var i=0;i<len;i++){ %>
+        <figure class="snip1376">
+          <img src="<%= data[i].image%>" alt="sample17" />
+          <figcaption>
+            <h2><%= data[i].name%></h2>
+            <p>            <p><%= data[i].hobbies%>
+
+            </p>
+            <p>            <p>"<%= data[i].image%>"
+
+            </p>
+            <div class="icons"><a href="https://www.instagram.com/">
+                <i class="ion-social-instagram-outline"></i></a>
+              <a href="https://www.linkedin.com/in/"> <i class="ion-social-linkedin-outline"></i></a>
+              <a href="https://www.facebook.com/"> <i class="ion-social-facebook-outline"></i></a>
+              <a href="https://www.github.com/"> <i class="ion-social-github-outline"></i></a>
+              <a href="https://twitter.com/"> <i class="ion-social-twitter-outline"></i></a>
+            </div>
+          </figcaption>
+
+        </figure>
+
+
+
+        <% } %>
+      </div>
     </div>
-
-
-
-    <% } %>
-
     <div id="formLink">
 
       <a href="/form">ADD NEW</a>

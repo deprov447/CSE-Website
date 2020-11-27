@@ -1,3 +1,10 @@
+$(".hover").mouseleave(
+    function () {
+      $(this).removeClass("hover");
+    }
+  );
+  
+
 $("#formLink").hide();
 $(document).ready(function () {
     if (window.localStorage.getItem("token") != null) {
@@ -10,7 +17,6 @@ $(document).ready(function () {
                 showData(data)
             },
             error: function (xhr, ajaxOptions, thrownError) {
-                alert("User is not a fresher")
 
             },
         });
