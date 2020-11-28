@@ -14,8 +14,11 @@ const { mail } = require("../../emails/activation")
 const auth = require("../../Middlewares/auth");
 const restriction = require("../../Middlewares/restriction")
 const activate = require("../../Middlewares/activateUser")
-const upload = require("../../profile");
 
+//IMPORTING STATIC DATA
+const db_2nd = require("../../staticDB/db2nd.json") //2nd Years Data
+// const db_3rd = require("../../staticDB/db3rd.json") //3rd Years Data
+// const db_4th = require("../../staticDB/db4th.json") //4th Years Data
 
 //ROUTES FOR RENDERING STATIC PAGE
 router.get("/", (req, res) => {
@@ -116,25 +119,6 @@ router.post("/users/logout", auth, async (req, res) => {
     }
 })
 
-//form details of freshers
-// router.post("/users/info", auth, upload.single("profilePic"), async (req, res) => {
-//     const user = req.user;
-
-//     const detail = new detailsModel({
-//         profilePic: req.file.buffer,
-//         penName: req.body.penName,
-//         message: req.body.message
-//     })
-
-//     await detail.save();
-
-//     user.detailsId = detail._id;
-//     user.save();
-
-
-
-//     res.send("Saved")
-// })
 
 
 router.get("/adminVerify", auth, async (req, res) => {
@@ -149,16 +133,6 @@ router.get("/adminVerify", auth, async (req, res) => {
     }
 })
 
-//Update form if required
-
-// router.put("/users/info/update", auth, upload.single("profilePic"), async (req, res) => {
-//     const user = req.user;
-
-//     const update = await detailsModel.updateOne({ _id: user.detailsId[0] }, req.body);
-
-//     res.send("Succes")
-
-// })
 
 router.get("/form", function (req, res) {
 
@@ -188,4 +162,16 @@ router.post("/formSubmit", auth, async (req, res) => {
     }
 
 })
+
+router.get("/seniors/2nd",(req,res)=>{
+    res.render("../frontEnd/public/demo.ejs",{data:db_2nd,len:db_2nd.responses.length})
+})
+// router.get("/seniors/3rd",(req,res)=>{
+//     res.render("../frontEnd/public/demo.ejs",{data:db_3rd})
+// })
+// router.get("/seniors/4th",(req,res)=>{
+//     res.render("../frontEnd/public/demo.ejs",{data:db_4th})
+// })
+
+
 module.exports = router;

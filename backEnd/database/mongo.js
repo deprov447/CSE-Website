@@ -1,4 +1,4 @@
-let MONGO_URL = require("../config/dev.json").MONGO_URL;
+// let MONGO_URL = require("../config/dev.json").MONGO_URL;
 
 
 //Delete this before hosting
@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise
 
 // Start connection
 
-mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((e) => {
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((e) => {
 	console.log('Connected to MongoDB! 😃🔥')
 }).catch((e) => {
 	console.error('Failed to connect to MongoDB 😕💥 ')
