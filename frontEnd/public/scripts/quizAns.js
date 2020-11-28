@@ -14,7 +14,6 @@ $.ajax({
 
 
 function showData(data) {
-    console.log(data.admin)
     if (data.admin) {
         $("#first").show();
     } 

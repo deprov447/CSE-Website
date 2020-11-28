@@ -18,10 +18,34 @@
 
     <!-- add page content here -->
     <h1 class="main_heading">Introduction</h1>
+    <% for(var i=0;i<len;i++){ %>
+    <div class="center">
+      <div class="front-face">
+        <div class="contents front">
+          <p>
+            <%= data[i].name%></p>
+          <span><%= data[i].image%></span>
+        </div>
+      </div>
+      <div class="back-face">
+        <div class="contents back">
+          <h2>
+            <%= data[i].hobbies%></h2>
+          <span>Follow Me</span>
+          <div class="icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <% for(var i=0;i<5;i++){ %>
-    <h1>Hellmo</h1>
+
+
     <% } %>
+
     <div id="formLink">
 
       <a href="/form">ADD NEW</a>

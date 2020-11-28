@@ -4,19 +4,23 @@ function detailsfunc() {
         image: $("#image").val(),
         hobbies: $("#hobbies").val()
     }
-    console.log(person)
+    
     $.ajax({
         url: '/formSubmit',
         type: 'post',
         headers: { "Authorization": localStorage.getItem('token') },
+        cache:false,
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
             alert("Data saved!!!")
-            window.location("/")
+            location.href="/introduce"
 
         },
-        
+        error: function (xhr, ajaxOptions, thrownError) {
+			alert(`Sorry you are not authorized`)
+			
+		},
         data: JSON.stringify(person)
     });
 
