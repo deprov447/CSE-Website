@@ -32,7 +32,6 @@ router.get("/seniors", (req, res) => {
 router.get("/introduce", async (req, res) => {
     const data = await detailsModel.find({});
     len = data.length;
-    console.log(data)
     res.render("../frontEnd/public/juniorIntro.ejs", { data, len })
 })
 
