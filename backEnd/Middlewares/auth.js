@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken")
 const { seniorUserModel, fresherUserModel } = require("../models/user");
-// const TOKEN_KEY = require("../config/dev.json").TOKEN_KEY
+const TOKEN_KEY = require("../config/dev.json").TOKEN_KEY
 
 const auth = async (req, res, next) => {
     let user;
@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
 
         const token = req.header("Authorization").replace("Bearer ", "");
 
-        const code = jwt.verify(token, process.env.TOKEN_KEY)
+        const code = jwt.verify(token,TOKEN_KEY)
 
         if (code.isAdmin) {
             user = await seniorUserModel.findOne({
