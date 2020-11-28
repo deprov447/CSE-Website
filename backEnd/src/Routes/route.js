@@ -16,7 +16,7 @@ const restriction = require("../../Middlewares/restriction")
 const activate = require("../../Middlewares/activateUser")
 
 //IMPORTING STATIC DATA
-const db_2nd = require("../../staticDB/db2nd.json") //2nd Years Data
+const db_2nd = require("../../staticDb/db2nd.json") //2nd Years Data
 // const db_3rd = require("../../staticDB/db3rd.json") //3rd Years Data
 // const db_4th = require("../../staticDB/db4th.json") //4th Years Data
 
