@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <title>Document</title>
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/quizAns.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <div id="first">
-        <p>HEllo</p>
-        <!-- write code inside here  don't change the div -->
+
+  <%- include("partials/nav-up.ejs") %>
+  <div class="page-content">
+
+    <!-- add page content here -->
+    <h1 class="main_heading">Quiz Answers</h1>
+    <div class="inp-fields">
+        <button id="prev">Previous</button>
+        <input type="text" value="1" id="id-in">
+        <button id="next">Next</button>
     </div>
-    <script src="./scripts/quizAns.js"></script>
+    <div class="out-fields">
+        <h1 id="stuName">1</h1>
+        <!-- //add fields here -->
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <a href="#" id="download">Download All Responses</a>
+    </div>
+  </div>
+  <%- include("partials/nav-down.ejs") %>
+  <script src="scripts/quizAns.js"></script>
 </body>
 </html>
