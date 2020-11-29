@@ -155,7 +155,7 @@ router.post("/formSubmit", auth, async (req, res) => {
 
 
 
-        res.send("Saved")
+        res.sendStatus(200);
     } else {
         res.sendStatus(404);
     }

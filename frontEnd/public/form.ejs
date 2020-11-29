@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>JUNIOR FORM</title>
 </head>
+
 <body>
-    <form action="#" onsubmit="detailsfunc();">
-        <input type="text" name="name" id="name" placeholder="name">
-        <input type="text" name="image" id="image" placeholder="image">
-        <input type="text" name="hobbies" id="hobbies" placeholder="hobbies">
-        <button type="submit" >Submit</button>
+    <form action="#" onsubmit="detailsfunc();return false">
+        <input type="text" id="name" placeholder="name">
+        <input type="text" id="image" placeholder="image">
+        <input type="text" id="hobbies" placeholder="hobbies">
+        <button type="submit">Submit</button>
     </form>
     <script src="./scripts/form.js"></script>
 </body>
+
 </html>

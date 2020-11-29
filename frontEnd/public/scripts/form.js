@@ -9,7 +9,6 @@ function detailsfunc() {
         url: '/formSubmit',
         type: 'post',
         headers: { "Authorization": localStorage.getItem('token') },
-        cache:false,
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
