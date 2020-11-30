@@ -146,6 +146,7 @@ router.post("/formSubmit", auth, async (req, res) => {
 
     const user = req.user;
     if (!req.isAdmin && user.isactivate.activate) {
+        req.body.name=user.username;
         const detail = new detailsModel(req.body)
 
         await detail.save();
