@@ -35,8 +35,6 @@ function changeEv(number){
     //Add other fields later
 }
 
-
-
 idIn.addEventListener("input",(event)=>{
     number=event.target.value;
     if(isNaN(number)){
@@ -59,3 +57,20 @@ next.addEventListener("click",()=>{
         changeEv(number);
     }
 })
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            if(number>1){
+                number--;
+                changeEv(number);
+            }
+            break;
+        case 39:
+            if(number<maxValue){
+                number++;
+                changeEv(number);
+            }
+            break;
+    }
+};
