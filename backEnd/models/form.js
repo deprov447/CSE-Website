@@ -11,18 +11,33 @@ let detailSchema = new mongoose.Schema({
 	},
 	image:{
 		type:String,
+		default: 'https://tse2.mm.bing.net/th?id=OIP.dRQWHlriomhRda5YshSCkgAAAA&pid=Api&P=0&w=300&h=300'
 	},
 	name: {
 		type: String,
 		// trim: true,
 		// required: "field can not be empty"
 	},
-	hobbies: {
-		type: String,
-	},
-	link: {
-		insta: {
+	links: {
+		instagram: {
 			type: String,
+			default: ''
+		},
+		linkedin: {
+			type: String,
+			default: ''
+		},
+		facebook: {
+			type: String,
+			default: ''
+		},
+		github: {
+			type: String,
+			default: ''
+		},
+		twitter: {
+			type: String,
+			default: ''
 		}
 	}
 })

@@ -1,8 +1,13 @@
 function detailsfunc() {
     var person = {
-        name: $("#name").val(),
         image: $("#image").val(),
-        hobbies: $("#hobbies").val()
+        links: {
+            instagram : $("#instagram").val(),
+            twitter : $("#twitter").val(),
+            facebook : $("#facebook").val(),
+            linkedin : $("#linkedin").val(),
+            github : $("#github").val(),
+        }
     }
     
     $.ajax({
