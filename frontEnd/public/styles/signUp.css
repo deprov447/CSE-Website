@@ -86,7 +86,7 @@ form.sign-in-form {
     background-color: #f0f0f0;
     margin: 10px 0;
     height: 55px;
-    border-radius: 55px;
+    border-radius: 5px;
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 0 0.4rem;
@@ -142,17 +142,17 @@ form.sign-in-form {
 }
 
 .social-icon:hover {
-    color: #4481eb;
-    border-color: #4481eb;
+    color: black;
+    border-color: black;
 }
 
 .btn {
     width: 150px;
-    background-color: #5995fd;
+    background-color: black;
     border: none;
     outline: none;
     height: 49px;
-    border-radius: 49px;
+    border-radius: 5px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -162,7 +162,7 @@ form.sign-in-form {
 }
 
 .btn:hover {
-    background-color: #4d84e2;
+    background-color: gray;
 }
 
 .panels-container {
@@ -183,7 +183,7 @@ form.sign-in-form {
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
-    background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+    background-image: url("./../assets/Rose-Petals.svg");
     transition: 1.8s ease-in-out;
     border-radius: 50%;
     z-index: 6;

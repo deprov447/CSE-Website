@@ -20,7 +20,7 @@
       <div class="nav-wrapper">
         <div class="left-side">
           <div class="gallery-title">
-            <h1 class="main_heading">Introduction</h1>
+            <h1 class="main_heading">Help Us Know You</h1>
           </div>
         </div>
       </div>
@@ -28,21 +28,21 @@
         <!-- add page content here -->
         <% for(var i=0;i<len;i++){ %>
         <figure class="snip1376">
-          <img src="<%= data[i].image%>" alt="sample17" />
+          <img src=<%= data[i].image%> alt="sample17" />
           <figcaption>
             <h2><%= data[i].name%></h2>
-            <p>            <p><%= data[i].hobbies%>
-
-            </p>
-            <p>            <p>"<%= data[i].image%>"
-
-            </p>
-            <div class="icons"><a href="https://www.instagram.com/">
-                <i class="ion-social-instagram-outline"></i></a>
-              <a href="https://www.linkedin.com/in/"> <i class="ion-social-linkedin-outline"></i></a>
-              <a href="https://www.facebook.com/"> <i class="ion-social-facebook-outline"></i></a>
-              <a href="https://www.github.com/"> <i class="ion-social-github-outline"></i></a>
-              <a href="https://twitter.com/"> <i class="ion-social-twitter-outline"></i></a>
+            <div class="icons">
+              <% if(data[i].links.instagram!=""){%>
+              <a href=<%data[i].links.instagram %>><i class="ion-social-instagram-outline"></i></a>
+              <% }if(data[i].links.linkedin!=""){%>
+              <a href=<%data[i].links.linkedin %>> <i class="ion-social-linkedin-outline"></i></a>
+              <% }if(data[i].links.facebook!=""){%>
+              <a href=<%data[i].links.facebook %>> <i class="ion-social-facebook-outline"></i></a>
+              <% }if(data[i].links.github!=""){%>
+              <a href=<%data[i].links.github %>> <i class="ion-social-github-outline"></i></a>
+              <% }if(data[i].links.twitter!=""){%>
+                <a href=<%data[i].links.twitter %>> <i class="ion-social-twitter-outline"></i></a>
+              <% }%>
             </div>
           </figcaption>
 

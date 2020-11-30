@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
 
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Raleway", sans-serif;
+
 }
 
 html,
 body {
+  font-family: "Raleway", sans-serif;
   display: grid;
   height: 100%;
   place-items: center;
@@ -24,7 +26,8 @@ body {
 
 .wrapper .text {
   font-size: 35px;
-  font-weight: 600;
+  padding-top: 10px;
+  font-weight: 400;
 }
 
 .wrapper p {
@@ -45,7 +48,8 @@ body {
   width: 200px;
   display: block;
   line-height: 60px;
-  border-radius: 30px;
+  border-radius: 3px;
+  border: 2px solid black;
   text-decoration: none;
   color: #fff;
   font-size: 18px;
@@ -56,12 +60,19 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+
 .btns a:first-child {
-  background: linear-gradient(-90deg, #f5ce62, #e85a19);
+  background: black;
 }
 
 .btns a:last-child {
-  background: linear-gradient(90deg, #0162c8, #55e7fc);
+  background: black;
+}
+
+.btns a:hover {
+  color: black;
+  border: 2px solid black;
+  background: white;
 }
 
 .btns a>span {

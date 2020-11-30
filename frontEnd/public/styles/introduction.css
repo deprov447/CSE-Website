@@ -109,3 +109,15 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+#formLink{
+    display: flex;
+    justify-content: center;
+}
+
+#formLink a{
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    padding: 20px 50px;
+}
