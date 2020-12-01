@@ -33,6 +33,8 @@ function renderCorrespondent(params = "") {
 
                 stuName.innerHTML = data.data.ID;
                 number = parseInt(data.data.ID.slice(5, 7))
+                idIn.value = number;
+                console.log(data.data)
             }
             else {
                 stuName.innerHTML = "No correspondent"
@@ -58,7 +60,7 @@ function changeEv(number) {
     console.log(number)
     idIn.value = number;
     renderCorrespondent(idIn.value.toString());
-    // stuName.innerHTML=number;
+    stuName.innerHTML="b1200"+number;
     //Add other fields later
 }
 
@@ -85,9 +87,10 @@ prev.addEventListener("click", () => {
 })
 
 next.addEventListener("click", () => {
-
-    changeEv(number);
-
+    if(number<maxValue){
+        number++;
+        changeEv(number);
+    }
 })
 
 document.onkeydown = function (e) {
