@@ -1,14 +1,15 @@
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
 #map {
-    width: 90vw;
-    height: 90vh;
-    margin: 0 auto;
-    margin-bottom: 5vh;
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto;
+  margin-bottom: 5vh;
 }
-a,a:hover{
-    text-decoration: none;
-    color: white;
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
 }

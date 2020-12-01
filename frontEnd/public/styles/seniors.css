@@ -6,7 +6,6 @@
   outline: none;
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
-
 }
 
 html,
@@ -58,7 +57,6 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 .btns a:first-child {
   background: black;
 }
@@ -67,7 +65,7 @@ body {
   background: black;
 }
 
-.btns a>span {
+.btns a > span {
   position: absolute;
   background: #fff;
   transform: translate(-50%, -50%);

@@ -1,6 +1,6 @@
 Vue.config.devtools = true;
 
-Vue.component('card', {
+Vue.component("card", {
   template: `
     <div class="card-wrap"
       @mousemove="handleMouseMove"
@@ -20,13 +20,14 @@ Vue.component('card', {
     this.width = this.$refs.card.offsetWidth;
     this.height = this.$refs.card.offsetHeight;
   },
-  props: ['dataImage'],
+  props: ["dataImage"],
   data: () => ({
     width: 0,
     height: 0,
     mouseX: 0,
     mouseY: 0,
-    mouseLeaveDelay: null }),
+    mouseLeaveDelay: null,
+  }),
 
   computed: {
     mousePX() {
@@ -39,21 +40,22 @@ Vue.component('card', {
       const rX = this.mousePX * 30;
       const rY = this.mousePY * -30;
       return {
-        transform: `rotateY(${rX}deg) rotateX(${rY}deg)` };
-
+        transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
+      };
     },
     cardBgTransform() {
       const tX = this.mousePX * -40;
       const tY = this.mousePY * -40;
       return {
-        transform: `translateX(${tX}px) translateY(${tY}px)` };
-
+        transform: `translateX(${tX}px) translateY(${tY}px)`,
+      };
     },
     cardBgImage() {
       return {
-        backgroundImage: `url(${this.dataImage})` };
-
-    } },
+        backgroundImage: `url(${this.dataImage})`,
+      };
+    },
+  },
 
   methods: {
     handleMouseMove(e) {
@@ -68,9 +70,10 @@ Vue.component('card', {
         this.mouseX = 0;
         this.mouseY = 0;
       }, 10);
-    } } });
-
-
+    },
+  },
+});
 
 const app = new Vue({
-  el: '#app' });
+  el: "#app",
+});
