@@ -19,7 +19,6 @@ body {
 }
 
 .wrapper {
-  background: #fff;
   padding: 20px 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
@@ -49,7 +48,6 @@ body {
   display: block;
   line-height: 60px;
   border-radius: 3px;
-  border: 2px solid black;
   text-decoration: none;
   color: #fff;
   font-size: 18px;
@@ -62,17 +60,11 @@ body {
 
 
 .btns a:first-child {
-  background: black;
+  background: linear-gradient(-90deg, #f5ce62, #e85a19);
 }
 
 .btns a:last-child {
-  background: black;
-}
-
-.btns a:hover {
-  color: black;
-  border: 2px solid black;
-  background: white;
+  background: linear-gradient(90deg, #0162c8, #55e7fc);
 }
 
 .btns a>span {

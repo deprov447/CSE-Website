@@ -164,14 +164,14 @@ router.post("/formSubmit", auth, async (req, res) => {
 })
 
 router.get("/seniors/2nd",(req,res)=>{
-    res.render("../frontEnd/public/demo.ejs",{data:db_2nd,len:db_2nd.responses.length})
+    res.render("../frontEnd/public/seniors2nd.ejs",{data:db_2nd,len:db_2nd.responses.length})
 })
-// router.get("/seniors/3rd",(req,res)=>{
-//     res.render("../frontEnd/public/demo.ejs",{data:db_3rd})
-// })
-// router.get("/seniors/4th",(req,res)=>{
-//     res.render("../frontEnd/public/demo.ejs",{data:db_4th})
-// })
+router.get("/seniors/3rd",(req,res)=>{
+    res.render("../frontEnd/public/seniors3rd.ejs",{data:db_3rd})
+})
+router.get("/seniors/4th",(req,res)=>{
+    res.render("../frontEnd/public/seniors4th.ejs",{data:db_4th})
+})
 
 
 module.exports = router;

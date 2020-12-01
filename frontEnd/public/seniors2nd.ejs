@@ -31,7 +31,7 @@
         
         <% for(var i=0;i<len;i++){%>
           <card data-image="<%= data.responses[i].Profile%>">
-            <h1 slot="header"><%= data.responses[i].Name%></h1>
+            <h1 class="StuName" slot="header"><%= data.responses[i].Name%></h1>
             <p slot="content"><%= data.responses[i].Year%></p>
           </card>
         <%}%>
