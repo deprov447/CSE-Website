@@ -7,8 +7,12 @@ $.ajax({
     type: 'GET',
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
-
+        renderCorrespondent();
         showData(data);
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+        alert(`User not signed-In`)
+        location.href="/"
     },
 });
 
@@ -17,6 +21,18 @@ function showData(data) {
     if (data.admin) {
         $("#first").show();
     } 
+}
+
+function renderCorrespondent() {
+    $.ajax({
+        url: `/QuizAns/data?roll=${idIn.value}`,
+        type: 'GET',
+        headers: { "Authorization": localStorage.getItem('token') },
+        success: function (data) {
+            stuName.innerHTML = data.data;
+        },
+        
+    });
 }
 
 var number=1;
@@ -31,7 +47,7 @@ var stuName = document.querySelector("#stuName")
 
 function changeEv(number){
     idIn.value=number;
-    stuName.innerHTML=number;
+    // stuName.innerHTML=number;
     //Add other fields later
 }
 

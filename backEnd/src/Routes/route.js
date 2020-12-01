@@ -146,7 +146,7 @@ router.post("/formSubmit", auth, async (req, res) => {
 
     const user = req.user;
     if (!req.isAdmin && user.isactivate.activate) {
-        req.body.name=user.username;
+        req.body.name = user.username;
         const detail = new detailsModel(req.body)
 
         await detail.save();
@@ -163,15 +163,37 @@ router.post("/formSubmit", auth, async (req, res) => {
 
 })
 
-router.get("/seniors/2nd",(req,res)=>{
-    res.render("../frontEnd/public/seniors2nd.ejs",{data:db_2nd,len:db_2nd.responses.length})
+router.get("/seniors/2nd", (req, res) => {
+    res.render("../frontEnd/public/seniors2nd.ejs", { data: db_2nd, len: db_2nd.responses.length })
 })
-router.get("/seniors/3rd",(req,res)=>{
-    res.render("../frontEnd/public/seniors3rd.ejs",{data:db_3rd})
+router.get("/seniors/3rd", (req, res) => {
+    res.render("../frontEnd/public/seniors3rd.ejs", { data: db_3rd })
 })
-router.get("/seniors/4th",(req,res)=>{
-    res.render("../frontEnd/public/seniors4th.ejs",{data:db_4th})
+router.get("/seniors/4th", (req, res) => {
+    res.render("../frontEnd/public/seniors4th.ejs", { data: db_4th })
 })
 
+router.get("/QuizAns/data", auth, (req, res) => {
+    const user = req.user;
+    let data;
+    if (req.query.roll != "") {
+        data = findCorrespondent(req.query.roll.slice(5, 7))
+    } else {
+        const email = user.email;
+        const rollNo = email.split("@");
+        data = findCorrespondent(rollNo[0].slice(5, 7))
+    }
+    function findCorrespondent(params) {
+        return params;
+        // quizAnsDb.responses.forEach(element => {
+        //     if (element.ID.slice(5, 7) == params) {
+        //         return element;
+        //     } else {
+        //         return "No correspondent"
+        //     }
+        // });
+    }
+    res.send({ data })
+})
 
 module.exports = router;
