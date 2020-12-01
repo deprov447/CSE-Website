@@ -12,7 +12,7 @@ $.ajax({
     },
     error: function (xhr, ajaxOptions, thrownError) {
         alert(`User not signed-In`)
-        location.href="/"
+        location.href = "/"
     },
 });
 
@@ -20,70 +20,87 @@ $.ajax({
 function showData(data) {
     if (data.admin) {
         $("#first").show();
-    } 
+    }
 }
 
-function renderCorrespondent() {
+function renderCorrespondent(params = "") {
     $.ajax({
-        url: `/QuizAns/data?roll=${idIn.value}`,
+        url: `/QuizAns/data?roll=${params}`,
         type: 'GET',
         headers: { "Authorization": localStorage.getItem('token') },
         success: function (data) {
-            stuName.innerHTML = data.data;
+            if (data.data.ID != undefined) {
+
+                stuName.innerHTML = data.data.ID;
+                number = parseInt(data.data.ID.slice(5, 7))
+            }
+            else {
+                stuName.innerHTML = "No correspondent"
+            }
+
         },
-        
+
     });
 }
 
-var number=1;
-var maxValue=20
+var number;
+var maxValue = 100
 
 var idIn = document.querySelector("#id-in")
-idIn.setAttribute("max",maxValue)
-idIn.setAttribute("min",1)
+idIn.setAttribute("max", maxValue)
+idIn.setAttribute("min", 0)
 var prev = document.querySelector("#prev")
 var next = document.querySelector("#next")
 var stuName = document.querySelector("#stuName")
 
-function changeEv(number){
-    idIn.value=number;
+function changeEv(number) {
+
+    console.log(number)
+    idIn.value = number;
+    renderCorrespondent(idIn.value.toString());
     // stuName.innerHTML=number;
     //Add other fields later
 }
 
-idIn.addEventListener("input",(event)=>{
-    number=event.target.value;
-    if(isNaN(number)){
+idIn.addEventListener("input", (event) => {
+
+    if (event.target.value.slice(5, 6) != "") {
+
+        number = (event.target.value.slice(4, 6))
+    } else {
+
+        number = event.target.value;
+    }
+    if (isNaN(number)) {
         alert("Input a number")
     }
-    else
-        changeEv(number);
+
 })
 
-prev.addEventListener("click",()=>{
-    if(number>1){
+prev.addEventListener("click", () => {
+    if (number > 1) {
         number--;
         changeEv(number);
     }
 })
 
-next.addEventListener("click",()=>{
-    if(number<maxValue){
-        number++;
-        changeEv(number);
-    }
+next.addEventListener("click", () => {
+
+    changeEv(number);
+
 })
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     switch (e.keyCode) {
         case 37:
-            if(number>1){
+            if (number > 1) {
+
                 number--;
                 changeEv(number);
             }
             break;
         case 39:
-            if(number<maxValue){
+            if (number < maxValue) {
                 number++;
                 changeEv(number);
             }
