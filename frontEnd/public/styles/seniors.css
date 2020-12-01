@@ -60,11 +60,11 @@ body {
 
 
 .btns a:first-child {
-  background: linear-gradient(-90deg, #f5ce62, #e85a19);
+  background: black;
 }
 
 .btns a:last-child {
-  background: linear-gradient(90deg, #0162c8, #55e7fc);
+  background: black;
 }
 
 .btns a>span {
