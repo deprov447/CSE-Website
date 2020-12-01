@@ -76,7 +76,7 @@ form.sign-in-form {
 
 .title {
     font-size: 2.2rem;
-    color: #444;
+    color: #032c66;
     margin-bottom: 10px;
 }
 
@@ -96,7 +96,7 @@ form.sign-in-form {
 .input-field i {
     text-align: center;
     line-height: 55px;
-    color: #acacac;
+    color: #032c66;
     transition: 0.5s;
     font-size: 1.1rem;
 }
@@ -108,11 +108,11 @@ form.sign-in-form {
     line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
-    color: #333;
+    color: #032c66;
 }
 
 .input-field input::placeholder {
-    color: #aaa;
+    color: #032c66;
     font-weight: 500;
 }
 
@@ -135,7 +135,7 @@ form.sign-in-form {
     margin: 0 0.45rem;
     color: #333;
     border-radius: 50%;
-    border: 1px solid #333;
+    border: 1px solid #032c66;
     text-decoration: none;
     font-size: 1.1rem;
     transition: 0.3s;
@@ -143,17 +143,17 @@ form.sign-in-form {
 
 .social-icon:hover {
     color: black;
-    border-color: black;
+        border-color: #032c66;
 }
 
 .btn {
     width: 150px;
-    background-color: black;
+    background-color: #5ba0ff;
     border: none;
     outline: none;
     height: 49px;
     border-radius: 5px;
-    color: #fff;
+    color: #ececec;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
@@ -162,7 +162,8 @@ form.sign-in-form {
 }
 
 .btn:hover {
-    background-color: gray;
+    background-color: #016bff;
+    /* color: black; */
 }
 
 .panels-container {
