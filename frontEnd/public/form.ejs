@@ -10,14 +10,19 @@
 
 <body>
     <form action="#" onsubmit="detailsfunc();return false">
-        <input type="text" id="image" placeholder="image">
+        <input type="text" id="image" placeholder="image" disabled>
         <input type="text" id="instagram" placeholder="instagram">
         <input type="text" id="facebook" placeholder="facebook">
         <input type="text" id="twitter" placeholder="twitter">
         <input type="text" id="linkedin" placeholder="linkedin">
+
         <input type="text" id="github" placeholder="github">
-        <button type="submit">Submit</button>
+        <div class="dropzone">
+        <input type="file" id="input" accept="image/*">
+    </div>
+        <button type="submit" id="submit">Submit</button>
     </form>
+    <script src="./scripts/imgur.js"></script>
     <script src="./scripts/form.js"></script>
 </body>
 
