@@ -52,16 +52,13 @@ function changeEv(number) {
   console.log(number);
   idIn.value = number;
   renderCorrespondent(idIn.value.toString());
-  stuName.innerHTML = "b1200" + number;
+  // stuName.innerHTML = "b1200" + number;
   //Add other fields later
 }
 
 idIn.addEventListener("input", (event) => {
-  if (event.target.value.slice(5, 6) != "") {
-    number = event.target.value.slice(4, 6);
-  } else {
-    number = event.target.value;
-  }
+  number = event.target.value;
+  changeEv(number);
   if (isNaN(number)) {
     alert("Input a number");
   }
@@ -87,13 +84,19 @@ document.onkeydown = function (e) {
       if (number > 1) {
         number--;
         changeEv(number);
+        var tip = document.querySelector("#tip");
+        tip.parentNode.removeChild(tip);
       }
       break;
     case 39:
       if (number < maxValue) {
         number++;
         changeEv(number);
+        var tip = document.querySelector("#tip");
+        tip.parentNode.removeChild(tip);
       }
       break;
   }
+  var tip = document.querySelector("#tip");
+  tip.parentNode.removeChild(tip);
 };

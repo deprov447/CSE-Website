@@ -26,13 +26,19 @@
   border: none;
 }
 .out-fields {
-  margin: 100px;
+  border: 2px solid black;
+  margin: 100px auto;
+  max-width: 900px;
+  position: relative;
+  display: flex;
+  justify-content: center;
   padding: 1vw 10vw;
+  min-height: 50vh;
 }
 #download {
-  background-color: white;
+  background-color: black;
+  color: white;
   border: 2px solid black;
-  color: black;
   font-size: large;
   /* border: none; */
   padding: 20px;
@@ -40,7 +46,12 @@
 }
 
 #download:hover {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+#tip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

@@ -139,7 +139,7 @@ var get_link = "";
 var feedback = function (res) {
   if (res.success === true) {
     get_link = res.data.link.replace(/^http:\/\//i, "https://");
-    document.querySelector("#image").value = get_link;
+    document.querySelector("#image").setAttribute("src", get_link);
   }
 };
 
