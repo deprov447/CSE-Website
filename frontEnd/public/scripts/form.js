@@ -1,6 +1,6 @@
 function detailsfunc() {
   var person = {
-    image: $("#image").val(),
+    image: $("#image").attr("src"),
     links: {
       instagram: $("#instagram").val(),
       twitter: $("#twitter").val(),

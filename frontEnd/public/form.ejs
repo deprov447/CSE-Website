@@ -6,22 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>JUNIOR FORM</title>
+    <link rel="stylesheet" href="./styles/form.css">
 </head>
 
 <body>
+    <div id="container">
+        <h1>&bull; Registration Form &bull;</h1>
+        <div class="underline">
+        </div>
     <form action="#" onsubmit="detailsfunc();return false">
-        <input type="text" id="image" placeholder="image" disabled>
-        <input type="text" id="instagram" placeholder="instagram">
-        <input type="text" id="facebook" placeholder="facebook">
-        <input type="text" id="twitter" placeholder="twitter">
-        <input type="text" id="linkedin" placeholder="linkedin">
-
-        <input type="text" id="github" placeholder="github">
-        <div class="dropzone">
-        <input type="file" id="input" accept="image/*">
-    </div>
-        <button type="submit" id="submit">Submit</button>
+        <div class="cen-con">
+            <img src="./assets/profile.svg" id="image">
+        </div>
+        <div class="dropzone cen-con">
+            <input type="file" id="input" accept="image/*">
+        </div>
+        <input type="text" id="instagram" placeholder="Link to Instagram Profile">
+        <input type="text" id="facebook" placeholder="Link to Facebook Profile">
+        <input type="text" id="twitter" placeholder="Link to Twitter Profile">
+        <input type="text" id="linkedin" placeholder="Link to LinkedIn Profile">
+        <input type="text" id="github" placeholder="Link to Github Profile">
+        <div class="cen-con">
+            <button type="submit" id="submit">Submit</button>
+        </div>
     </form>
+</div>
+
     <script src="./scripts/imgur.js"></script>
     <script src="./scripts/form.js"></script>
 </body>
