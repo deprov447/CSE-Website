@@ -315,8 +315,12 @@ nav {
   min-height: 100vh;
   padding-bottom: 10vh;
 }
-@media (min-width: 768px) {
   .inner-button {
+    display: none;
+  }
+
+@media (max-width: 768px) { 
+  .nav-right{
     display: none;
   }
 }
