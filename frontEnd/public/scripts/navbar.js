@@ -15,13 +15,15 @@ $(document).ready(function () {
     }
   });
 
-  // document.open()
-  // document.write(unescape("%3Cscript src='https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js%3E'"))
-  // document.close()
-
-
 document.addEventListener('touchstart', handleTouchStart, false);        
 document.addEventListener('touchmove', handleTouchMove, false);
+
+$("<link/>", {
+  rel: "stylesheet",
+  type: "text/css",
+  href: "https://sweet-modal.adepto.as/css/jquery.sweet-modal.min.css"
+}).appendTo("head");
+
 
 var xDown = null;                                                        
 var yDown = null;
