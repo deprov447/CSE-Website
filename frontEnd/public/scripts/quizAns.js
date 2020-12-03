@@ -58,7 +58,8 @@ function changeEv(number) {
 
 idIn.addEventListener("input", (event) => {
   number = event.target.value;
-  changeEv(number);
+  if(number!="")
+    changeEv(number);
   if (isNaN(number)) {
     alert("Input a number");
   }
