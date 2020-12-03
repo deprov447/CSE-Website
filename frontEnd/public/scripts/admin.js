@@ -9,10 +9,14 @@ if (window.localStorage.getItem("token") != null) {
     headers: { Authorization: localStorage.getItem("token") },
     success: function (data) {
       showData(data);
+      userName = data.user;
+      displayName(userName)
+      
     },
   });
 } else {
   $("#logout").hide();
+  $("#userName_display").hide();
 }
 
 function showData(data) {
@@ -21,4 +25,8 @@ function showData(data) {
   } else {
     $("#quiz").show();
   }
+}
+
+function displayName(userName) {
+  document.getElementById("userName_display").innerHTML = userName; 
 }

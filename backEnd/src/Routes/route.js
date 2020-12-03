@@ -122,9 +122,9 @@ router.get("/adminVerify", auth, async (req, res) => {
   const user = req.user;
 
   if (req.isAdmin && user.isactivate.activate) {
-    res.send({ admin: true });
+    res.send({ admin: true, user: user.username });
   } else if (!req.isAdmin && user.isactivate.activate) {
-    res.send({ admin: false });
+    res.send({ admin: false, user: user.username });
   } else {
     res.status(400).send({});
   }
