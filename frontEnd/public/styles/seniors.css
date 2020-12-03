@@ -1,24 +1,29 @@
 /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
-}
+} */
 
-html,
-body {
-  font-family: "Raleway", sans-serif;
-  display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
+.main-cont{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
 }
-
 .wrapper {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  text-align: center;
   padding: 20px 30px;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  max-width: 400px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -36,12 +41,22 @@ body {
 
 .wrapper .btns {
   display: flex;
-  margin: 30px 0 20px 0;
+  margin: 30px;
+}
+
+@media (max-width:1000px){
+  .wrapper .btns{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+  }
 }
 
 .btns a {
   position: relative;
-  margin: 0 20px;
+  margin: 20px 20px;
   height: 60px;
   width: 200px;
   display: block;

@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <!-- <title>Button Ripple Effect | CodingNepal</title> -->
-  <link rel="stylesheet" href="/styles/seniors.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet"> 
 
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/seniors.css">
+</head>
 <body>
-  <div class="wrapper">
-    <div class="text">
-      KNOW YOUR SENIORS</div>
-    <div class="btns">
-      <a href="/seniors/2nd">2nd YEAR</a>
-      <a href="/seniors/3rd" style="background: black">3rd YEAR</a>
-      <a href="/seniors/4th">4th YEAR</a>
+
+  <%- include("partials/nav-up.ejs") %>
+  <div class="page-content">
+
+    <!-- add page content here -->
+    <h1 class="main_heading">Meet Your Seniors</h1>
+    
+    <div class="main-cont">
+
+<div class="wrapper">
+  <div class="btns">
+    <a href="/seniors/2nd">2nd YEAR</a>
+    <a href="/seniors/3rd" style="background: black">3rd YEAR</a>
+    <a href="/seniors/4th">4th YEAR</a>
+  </div>
     </div>
   </div>
-  <script>
-    const buttons = document.querySelectorAll("a");
-    buttons.forEach((button) => {
-      button.onclick = function (e) {
-        let x = e.clientX - e.target.offsetLeft;
-        let y = e.clientY - e.target.offsetTop;
-        let ripple = document.createElement("span");
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-        this.appendChild(ripple);
-        setTimeout(function () {
-          ripple.remove();
-        }, 600); // 1second = 1000ms
-      }
-    });
-  </script>
-
+  <%- include("partials/nav-down.ejs") %>
 </body>
-
 </html>
