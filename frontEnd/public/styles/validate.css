@@ -107,6 +107,10 @@
     linear-gradient(to right, var(--color-10), var(--color-11));
 }
 
+.error {
+  font-family: "Poppins", sans-serif;
+}
+
 .rainbow-marker-loader {
   height: 4rem;
   width: 20rem;

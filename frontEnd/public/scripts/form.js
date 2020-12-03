@@ -16,11 +16,21 @@ function detailsfunc() {
     headers: { Authorization: localStorage.getItem("token") },
     contentType: "application/json",
     success: function (data) {
-      alert("Data saved!!!");
+      $.sweetModal({
+        content: 'Data Saved',
+        icon: $.sweetModal.ICON_SUCCESS,
+        width: '30%',
+        classes: ['error']
+      });
       location.href = "/introduce";
     },
     error: function (xhr, ajaxOptions, thrownError) {
-      alert(`Sorry you are not authorized`);
+      $.sweetModal({
+        content: 'You are not authorized',
+        icon: $.sweetModal.ICON_WARNING,
+        width: '30%',
+        classes: ['error']
+      })
     },
     data: JSON.stringify(person),
   });

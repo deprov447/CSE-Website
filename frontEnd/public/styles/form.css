@@ -59,6 +59,11 @@ h1 {
   margin: -0.512em auto;
   width: 80px;
 }
+
+.error {
+  font-family: "Poppins", sans-serif;
+}
+
 input[type="text"],
 [type="email"],
 select,

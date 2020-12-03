@@ -22,13 +22,21 @@ function signUpfunc() {
     dataType: "json",
     contentType: "application/json",
     success: function (data) {
-      alert(
-        "Please validate your email by clicking on the link sent to your mail"
-      );
+      $.sweetModal({
+        content: 'Please validate your email by clicking on the link sent to your mail',
+        icon: $.sweetModal.ICON_SUCCESS,
+        width: '30%',
+        classes: ['error']
+      });
       window.localStorage.setItem("token", data.token);
     },
     error: function (xhr, ajaxOptions, thrownError) {
-      alert(`User sign up failed, ${xhr.responseText}`);
+      $.sweetModal({
+        content: `User sign up failed, ${xhr.responseText}`,
+        icon: $.sweetModal.ICON_ERROR,
+        width: '30%',
+        classes: ['error']
+      });
     },
     data: JSON.stringify(person),
   });
@@ -48,7 +56,12 @@ function signInfunc() {
       window.location.href = "/";
     },
     error: function (xhr, ajaxOptions, thrownError) {
-      alert(`User sign up failed, ${xhr.responseText}`);
+      $.sweetModal({
+        content: `User sign in failed, ${xhr.responseText}`,
+        icon: $.sweetModal.ICON_ERROR,
+        width: '30%',
+        classes: ['error']
+      });
     },
     data: JSON.stringify(person),
   });

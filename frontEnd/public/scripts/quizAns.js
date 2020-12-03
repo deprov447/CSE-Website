@@ -9,7 +9,12 @@ $.ajax({
     showData(data);
   },
   error: function (xhr, ajaxOptions, thrownError) {
-    alert(`User not signed-In`);
+    $.sweetModal({
+      content: 'User not signed in',
+      icon: $.sweetModal.ICON_WARNING,
+      width: '30%',
+      classes: ['error']
+    });
     location.href = "/";
   },
 });
@@ -61,7 +66,12 @@ idIn.addEventListener("input", (event) => {
   if(number!="")
     changeEv(number);
   if (isNaN(number)) {
-    alert("Input a number");
+    $.sweetModal({
+      content: 'Input a number',
+      icon: $.sweetModal.ICON_WARNING,
+      width: '30%',
+      classes: ['error']
+    });
   }
 });
 

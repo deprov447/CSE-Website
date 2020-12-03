@@ -10,7 +10,12 @@ $(document).ready(function () {
         window.location.href = "/";
       },
       error: function (xhr, ajaxOptions, thrownError) {
-        alert(`User sign up failed ${xhr.responseText}`);
+        $.sweetModal({
+          content: `User sign up failed, ${xhr.responseText}`,
+          icon: $.sweetModal.ICON_ERROR,
+          width: '30%',
+          classes: ['error']
+        });
       },
     });
   }, 6000);

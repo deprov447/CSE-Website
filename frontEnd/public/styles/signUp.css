@@ -11,6 +11,12 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+.error {
+  font-family: "Poppins", sans-serif;
+  /* Apparently, flex and font-size does not work. */
+  /* font-size: 100px !important; */
+}
+
 /* p.error {
     display: inline;
     color: red;
@@ -142,7 +148,7 @@ form.sign-in-form {
 
 .social-icon:hover {
   color: black;
-  border-color: #black;
+  border-color: black;
 }
 
 .btn {

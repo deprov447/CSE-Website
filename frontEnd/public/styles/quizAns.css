@@ -35,6 +35,11 @@
   padding: 1vw 10vw;
   min-height: 50vh;
 }
+
+.error {
+  font-family: "Poppins", sans-serif;
+}
+
 #download {
   background-color: black;
   color: white;
