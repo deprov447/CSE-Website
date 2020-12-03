@@ -10,8 +10,7 @@ if (window.localStorage.getItem("token") != null) {
     success: function (data) {
       showData(data);
       userName = data.user;
-      displayName(userName)
-      
+      displayName(userName);
     },
   });
 } else {
@@ -28,5 +27,5 @@ function showData(data) {
 }
 
 function displayName(userName) {
-  document.getElementById("userName_display").innerHTML = userName; 
+  document.getElementById("userName_display").innerHTML = userName;
 }

@@ -8,7 +8,7 @@
   font-family: "Raleway", sans-serif;
 } */
 
-.main-cont{
+.main-cont {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -44,8 +44,8 @@
   margin: 30px;
 }
 
-@media (max-width:1000px){
-  .wrapper .btns{
+@media (max-width: 1000px) {
+  .wrapper .btns {
     display: flex;
     flex-direction: column;
     align-content: center;
