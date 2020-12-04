@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>JUNIOR FORM</title>
+    <link rel="stylesheet" href="https://sweet-modal.adepto.as/css/jquery.sweet-modal.min.css">
+    <link rel="stylesheet" href="./styles/form.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>&bull; Registration Form &bull;</h1>
+        <div class="underline">
+        </div>
+    <form action="#" onsubmit="detailsfunc();return false">
+        <div class="cen-con">
+            <img src="./assets/profile.svg" id="image">
+        </div>
+        <div class="dropzone cen-con">
+            <input type="file" id="input" accept="image/*" required>
+        </div>
+        <input type="text" id="desc" placeholder="Write something about yourself" required>
+        <input type="text" id="favLink" placeholder="Link to Instagram/Facebook Profile(Complete URL)" required>
+        <div class="cen-con">
+            <button type="submit" id="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+    <script src="./scripts/imgur.js"></script>
+    <script src="./scripts/form.js"></script>
+    <script src="https://sweet-modal.adepto.as/js/jquery.sweet-modal.min.js"></script>
+</body>
+</html>

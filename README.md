@@ -9,6 +9,7 @@
 - https://www.atlassian.com/git
 
 ## Steps to setup
+
 - Fork this and create a PR (or better, dm to extend you the ownership)
 - Setup Environment
   - Use cloud9 (or any other online environment to decrease the hassle)
@@ -21,10 +22,10 @@
 - Create a file `dev.json` in `backEnd/config` and paste this :
 
 > {
->   "PORT": 3000,
->   "MONGO_URL": "db_server",
->   "APIKEY": "dev",
->   "TOKEN_KEY": "token"
+> "PORT": 3000,
+> "MONGO_URL": "db_server",
+> "APIKEY": "dev",
+> "TOKEN_KEY": "token"
 > }
 
 - Run `npm install`
@@ -32,7 +33,7 @@
 - Open `localhost:3000` on browser.
 - **Start Contributing**
 
-Follow [Contribution Guidelines](https://github.com/deprov447/cse-fresher-website/blob/master/CONTRIBUTING.md) 
+Follow [Contribution Guidelines](https://github.com/deprov447/cse-fresher-website/blob/master/CONTRIBUTING.md)
 
 To see the work done - [Click here](https://ancient-coast-19809.herokuapp.com/)
 

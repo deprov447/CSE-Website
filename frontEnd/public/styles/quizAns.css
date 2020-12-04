@@ -1,0 +1,62 @@
+.inp-fields {
+  display: flex;
+  justify-content: space-evenly;
+}
+.inp-fields input {
+  width: 25vw;
+  padding: 0px 50px;
+  height: 50px;
+  border: 2px solid black;
+  font-size: large;
+  color: gray;
+}
+.inp-fields button {
+  background-color: black;
+  color: white;
+  width: 10vw;
+  cursor: pointer;
+  font-size: large;
+  border: none;
+}
+.inp-fields button :hover {
+  background-color: gray;
+  color: black;
+  border-radius: 10px;
+  font-size: large;
+  border: none;
+}
+.out-fields {
+  border: 2px solid black;
+  margin: 100px auto;
+  max-width: 900px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1vw 10vw;
+  min-height: 50vh;
+}
+
+.error {
+  font-family: "Poppins", sans-serif;
+}
+
+#download {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  font-size: large;
+  /* border: none; */
+  padding: 20px;
+  text-decoration: none;
+}
+
+#download:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+#tip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
