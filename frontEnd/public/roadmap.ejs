@@ -34,7 +34,11 @@
     <div id="map"></div>
     <script>
       if (!mapboxgl.supported()) {
-        alert('Your browser does not support Mapbox GL');
+        // alert('Your browser does not support Mapbox GL');
+        $.sweetModal({
+          content : 'Your browser does not support Mapbox GL',
+          icon: $.sweetModal.ICON_ERROR
+        })
       } else {
         mapboxgl.accessToken = 'pk.eyJ1IjoieWFzaHQwMSIsImEiOiJja2c2bzA1NG0wM3ViMnhuNmVyNHYyZGFtIn0.piHlch1hfTMaiZyWkG7cng';
         var map = new mapboxgl.Map({
