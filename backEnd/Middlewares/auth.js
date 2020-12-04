@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { seniorUserModel, fresherUserModel } = require("../models/user");
-const TOKEN_KEY = require("../config/dev.json").TOKEN_KEY || process.env.TOKEN_KEY;
+const TOKEN_KEY = process.env.TOKEN_KEY;
 
 const auth = async (req, res, next) => {
   let user;
