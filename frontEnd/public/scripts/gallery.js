@@ -13,3 +13,12 @@ portfolioItems.forEach((portfolioItem) => {
 });
 
 AOS.init();
+
+
+if(localStorage.getItem("visitedGalOn")!=date.getDate() && $(window).width()>750)
+{
+  $.sweetModal({
+    content: 'Hover Over the Images'
+  });
+  localStorage.setItem("visitedGalOn",date.getDate());
+}

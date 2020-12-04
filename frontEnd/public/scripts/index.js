@@ -1,6 +1,17 @@
 var rellax = new Rellax(".rellax");
 AOS.init();
 
+var date = new Date()
+
+if(localStorage.getItem("visitedOn")!=date.getDate() && $(window).width()<750)
+{
+  $.sweetModal({
+    content: 'You can swipe to toggle Side Nav',
+    icon: $.sweetModal.ICON_WARNING
+  });
+  localStorage.setItem("visitedOn",date.getDate());
+}
+
 // ParticlesJS Config.
 particlesJS("particles-js", {
   particles: {
