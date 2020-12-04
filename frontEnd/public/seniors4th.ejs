@@ -28,12 +28,15 @@
       <!-- 440 x 320 -->
       <!-- #1  -->
       <div id="app" class="wrpr">
-        
+
         <% for(var i=0;i<len;i++){%>
+        <a href="<%= data.responses[i].Instagram%>">
           <card data-image="<%= data.responses[i].Profile%>">
             <h1 class="StuName" slot="header"><%= data.responses[i].Name%></h1>
             <p slot="content"><%= data.responses[i].Year%></p>
           </card>
+        </a>
+
         <%}%>
 
       </div>
@@ -43,7 +46,7 @@
   <%- include("./partials/nav-down.ejs") %>
 
 
-  <script src="/scripts/seniors.js"></script>
+        <script src="/scripts/seniors.js"></script>
 </body>
 
 </html>

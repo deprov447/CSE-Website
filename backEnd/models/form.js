@@ -20,27 +20,15 @@ let detailSchema = new mongoose.Schema({
     // required: "field can not be empty"
   },
   links: {
-    instagram: {
+    favLink: {
       type: String,
       default: "",
     },
-    linkedin: {
-      type: String,
-      default: "",
-    },
-    facebook: {
-      type: String,
-      default: "",
-    },
-    github: {
-      type: String,
-      default: "",
-    },
-    twitter: {
-      type: String,
-      default: "",
-    },
+
   },
+  desc:{
+    type:String
+  }
 });
 
 detailsModel = mongoose.model("2020-24_Batch_details", detailSchema);

@@ -2,12 +2,9 @@ function detailsfunc() {
   var person = {
     image: $("#image").attr("src"),
     links: {
-      instagram: $("#instagram").val(),
-      twitter: $("#twitter").val(),
-      facebook: $("#facebook").val(),
-      linkedin: $("#linkedin").val(),
-      github: $("#github").val(),
+      favLink: $("#favLink").val(),
     },
+    desc:$("#desc").val(),
   };
 
   $.ajax({

@@ -7,9 +7,11 @@
   <title>Introduction</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/theme.css" />
-  <link rel="stylesheet" href="styles/introduction.css">
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/styles/theme.css" />
+  <link rel="stylesheet" href="/styles/demo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+  <link rel="stylesheet" href="/styles/introduction.css">
 </head>
 
 <body>
@@ -24,33 +26,18 @@
           </div>
         </div>
       </div>
-      <div class="wrpr">
-        <!-- add page content here -->
-        <% for(var i=0;i<len;i++){ %>
-        <figure class="snip1376">
-          <img src=<%= data[i].image%> alt="sample17" />
-          <figcaption>
-            <h2><%= data[i].name%></h2>
-            <div class="icons">
-              <% if(data[i].links.instagram!=""){%>
-              <a href=<%data[i].links.instagram %>><i class="ion-social-instagram-outline"></i></a>
-              <% }if(data[i].links.linkedin!=""){%>
-              <a href=<%data[i].links.linkedin %>> <i class="ion-social-linkedin-outline"></i></a>
-              <% }if(data[i].links.facebook!=""){%>
-              <a href=<%data[i].links.facebook %>> <i class="ion-social-facebook-outline"></i></a>
-              <% }if(data[i].links.github!=""){%>
-              <a href=<%data[i].links.github %>> <i class="ion-social-github-outline"></i></a>
-              <% }if(data[i].links.twitter!=""){%>
-                <a href=<%data[i].links.twitter %>> <i class="ion-social-twitter-outline"></i></a>
-              <% }%>
-            </div>
-          </figcaption>
+      <div id="app" class="wrpr">
 
-        </figure>
+        <% for(var i=0;i<len;i++){%>
+        <a href="<%= data[i].links.favLink%>">
+          <card data-image="<%= data[i].image%>">
+            <h1 class="StuName" slot="header"><%= data[i].name%></h1>
+            <p slot="content"><%= data[i].desc%></p>
+          </card>
+        </a>
 
+        <%}%>
 
-
-        <% } %>
       </div>
     </div>
     <div id="formLink">
@@ -59,7 +46,8 @@
     </div>
   </div>
   <%- include("partials/nav-down.ejs") %>
-  <script src="scripts/introduction.js"></script>
+  <script src="/scripts/introduction.js"></script>
+  <script src="/scripts/seniors.js"></script>
 </body>
 
 </html>
