@@ -67,7 +67,7 @@ router.post("/users/signUp", restriction, async (req, res) => {
 
     const encodedValue = await base_64.encode(req.rollNo);
     await user.addEncodedValue(encodedValue);
-    // mail(encodedValue, req.body.email)
+    mail(encodedValue, req.body.email)
     //Send hashed value through email
 
     res.send({ token });
