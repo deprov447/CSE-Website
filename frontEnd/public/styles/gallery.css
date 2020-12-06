@@ -9,7 +9,6 @@ body {
   text-align: center;
   font-size: 50px;
   color: black;
-  border-bottom: 5px solid black;
   margin-left: 10%;
   margin-right: 10%;
   padding-bottom: 20px;
@@ -26,6 +25,9 @@ body {
   grid-template-columns: 1fr;
 }
 
+main{
+  min-width: 175vh;
+}
 .nav-wrapper {
   display: flex;
   justify-content: center;
@@ -168,7 +170,6 @@ body {
     font-size: 50px;
     font-family: "Montserrat", sans-serif;
     color: black;
-    border-bottom: 5px solid black;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 20px;

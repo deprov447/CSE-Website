@@ -1,4 +1,7 @@
 var rellax = new Rellax(".rellax");
+if($(window).width()<740)
+  rellax.destroy(); 
+  
 AOS.init();
 
 var date = new Date()
