@@ -62,10 +62,8 @@ h4 {
   /* font-size: large; */
   margin: 50px;
 }
-h5 {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  line-height: 50px;
+h5{
+  margin-left: 50px;
 }
 p {
   margin: 50px;
@@ -77,18 +75,34 @@ h6 {
 }
 ul.advise li {
   font-size: 20px;
-  /* color: red; */
   list-style-type: disclosure-closed;
 }
 ul.team1 li{
   font-size: 20px;
   display: inline;
-  padding: .2em 1em;
+  width: 14vw;
 }
 ul.team2 li{
   font-size: 20px;
   display: inline;
-  padding: .3em 2em;
+  width: 14vw;
+}
+
+ul.team2,ul.team1{
+  width: 75vw;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1140px) {
+  ul.team1,ul.team2,ul.team1 li,ul.team2 li{
+    display: block;
+    margin: 0;
+  }
+  ul.team1 li,ul.team2 li{
+    width: inherit;
+  }
 }
 /* canvas {
 display: block;
