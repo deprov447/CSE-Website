@@ -80,7 +80,16 @@ ul.advise li {
   /* color: red; */
   list-style-type: disclosure-closed;
 }
-
+ul.team1 li{
+  font-size: 20px;
+  display: inline;
+  padding: .2em 1em;
+}
+ul.team2 li{
+  font-size: 20px;
+  display: inline;
+  padding: .3em 2em;
+}
 /* canvas {
 display: block;
 vertical-align: bottom;
