@@ -30,10 +30,10 @@
       <div id="app" class="wrpr">
 
         <% for(var i=0;i<len;i++){%>
-        <a href="<%= data.responses[i].Instagram%>">
+        <a href="<%= data.responses[i]["Instagram/LinkedIn/Facebook"]%>">
           <card data-image="<%= data.responses[i].Profile%>" >
-            <h1 class="StuName" slot="header"><%= data.responses[i].Name%></h1>
-            <p slot="content"><%= data.responses[i].Year%></p>
+            <h1 class="StuName" slot="header"><%= data.responses[i].PenName%></h1>
+            <p slot="content"><%= data.responses[i]["1 - 2 Lines about Yourself"]%></p>
           </card>
         </a>
 

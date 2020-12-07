@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 
 //Importing module for generating token
 const jwt = require("jsonwebtoken");
-const TOKEN_KEY = require("../config/dev.json").TOKEN_KEY;
+const TOKEN_KEY = process.env.TOKEN_KEY;
 // import promise
 mongoose.Promise = global.Promise;
 

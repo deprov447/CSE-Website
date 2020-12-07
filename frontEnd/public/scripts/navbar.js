@@ -52,13 +52,14 @@ $(document).ready(function () {
     var yDiff = yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      /*most significant*/
-      if (xDiff > 0) {
-        toggleSidebar();
-      } else {
-        toggleSidebar();
+      if(document.querySelector("title").innerText!=="Map to the College")  //removing touch support from map page
+          toggleSidebar();
+      else
+        {
+          if(yDown < $("#map").position().top || $("main").hasClass("move-to-left"))
+            toggleSidebar()
+        }
       }
-    }
     /* reset values */
     xDown = null;
     yDown = null;
