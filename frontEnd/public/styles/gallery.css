@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -26,7 +28,7 @@ body {
 }
 
 main{
-  min-width: 175vh;
+  min-height: 175vh;
 }
 .nav-wrapper {
   display: flex;
@@ -177,7 +179,7 @@ main{
   }
 
   body {
-    font-family: "Lato", sans-serif;
+    /* font-family: "Lato", sans-serif; */
     margin: 0px;
   }
 

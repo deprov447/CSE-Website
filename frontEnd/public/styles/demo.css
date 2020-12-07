@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
 .gallery-title h1 {
   text-align: center;
   /* font-size: 50px; */
@@ -16,8 +18,8 @@ p + p {
 
 .StuName {
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
-  font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-family: 'Acme', sans-serif;
 }
 
 .wrpr {
@@ -35,6 +37,7 @@ p + p {
   transform: perspective(800px);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  font-family: 'Acme', sans-serif;
   cursor: pointer;
 }
 
@@ -87,7 +90,7 @@ p + p {
   height: 320px;
   background-color: #333;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px,
     inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
   -webkit-transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -95,7 +98,8 @@ p + p {
 }
 
 .card-bg {
-  /* opacity: 0.5; */
+  opacity: 0.5;
+  background-color: black;
   position: absolute;
   top: -20px;
   left: -20px;
