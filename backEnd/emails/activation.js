@@ -3,7 +3,7 @@ const APIKEY = process.env.APIKEY;
 sgMail.setApiKey(APIKEY);
 
 const mail = (data, email) => {
-  const text = `http://localhost:3000/activate/${data}`;
+  const text = `https://batchof24.herokuapp.com/activate/${data}`;
   sgMail.send({
     to: email,
     from: {
