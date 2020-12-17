@@ -77,3 +77,9 @@ Vue.component("card", {
 const app = new Vue({
   el: "#app",
 });
+
+
+$.sweetModal({
+  content: 'Click on tiles to open a social handle',
+  icon: $.sweetModal.ICON_INFO
+});
