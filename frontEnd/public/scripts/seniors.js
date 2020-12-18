@@ -78,8 +78,13 @@ const app = new Vue({
   el: "#app",
 });
 
+var date = new Date()
 
+if(localStorage.getItem("MYSvisitedOn")!=date.getDate())
+{
 $.sweetModal({
   content: 'Click on tiles to open a social handle',
   icon: $.sweetModal.ICON_INFO
 });
+localStorage.setItem("MYSvisitedOn",date.getDate());
+}
