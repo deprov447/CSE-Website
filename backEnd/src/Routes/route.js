@@ -17,9 +17,7 @@ const activate = require("../../Middlewares/activateUser");
 
 //IMPORTING STATIC DATA
 const db_2nd = require("../../staticDb/db2nd.json"); //2nd Years Data
-// const db_3rd = require("../../staticDB/db3rd.json") //3rd Years Data
-// const db_4th = require("../../staticDB/db4th.json") //4th Years Data
-const quizAnsDb = require("../../staticDb/quizAns.json");
+
 
 //ROUTES FOR RENDERING STATIC PAGE
 router.get("/", (req, res) => {
@@ -27,7 +25,10 @@ router.get("/", (req, res) => {
 });
 
 router.get("/seniors", (req, res) => {
-  res.render("../frontEnd/public/knowYourSeniors");
+  res.render("../frontEnd/public/seniors2nd.ejs", {
+    data: db_2nd,
+    len: db_2nd.responses.length,
+  });
 });
 
 router.get("/introduce", async (req, res) => {
@@ -151,43 +152,9 @@ router.post("/formSubmit", auth, async (req, res) => {
   }
 });
 
-router.get("/seniors/2nd", (req, res) => {
-  res.render("../frontEnd/public/seniors2nd.ejs", {
-    data: db_2nd,
-    len: db_2nd.responses.length,
-  });
-});
-router.get("/seniors/3rd", (req, res) => {
-  res.render("../frontEnd/public/seniors3rd.ejs", { data: db_3rd });
-});
-router.get("/seniors/4th", (req, res) => {
-  res.render("../frontEnd/public/seniors4th.ejs", { data: db_4th });
-});
 
-router.get("/QuizAns/data", auth, (req, res) => {
-  const user = req.user;
-  let data;
-  if (req.query.roll != "") {
-    data = findCorrespondent(req.query.roll);
-  } else {
-    const email = user.email;
-    const rollNo = email.split("@");
-    data = findCorrespondent(rollNo[0].slice(5, 7));
-  }
-  function findCorrespondent(params) {
-    let index;
-    for (index = 0; index < quizAnsDb.responses.length; index++) {
-      if (
-        parseInt(quizAnsDb.responses[index].ID.slice(5, 7)) == parseInt(params)
-      ) {
-        return quizAnsDb.responses[index];
-      }
-    }
-    if (index == quizAnsDb.responses.length) {
-      return "No correspondent";
-    }
-  }
-  res.send({ data });
-});
+
+
+
 
 module.exports = router;
